@@ -1,0 +1,95 @@
+{
+  "summaries": [
+    {
+      "path": "data/enrichment/semantic_fidelity_results_gpt_v4.1_solo_gpt5mini.jsonl",
+      "by_bucket": {
+        "gpt::enterprise": {
+          "n_product_items_present_with_rank_and_total": 391,
+          "skipped_missing_listicle_rank": 49,
+          "skipped_missing_total_products_in_listicle": 0,
+          "mean_total_products_in_listicle_for_used_items": 10.953964194373402,
+          "mean_normalized_rank_0_best_1_worst": 0.3628354593794427,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top3": 0.5089514066496164,
+            "top5": 0.7595907928388747,
+            "top10": 0.9386189258312021,
+            "top1": 0.18925831202046037
+          },
+          "topk_expected_rates_uniform": {
+            "top1": 0.10955256027403695,
+            "top3": 0.3286576808221084,
+            "top5": 0.5430739693156205,
+            "top10": 0.9040954074738506
+          },
+          "topk_lift_vs_uniform": {
+            "top3": 1.5485760301615925,
+            "top5": 1.398687537530307,
+            "top10": 1.0381857026061156,
+            "top1": 1.727557179376236
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.2584260629396324
+        },
+        "gpt::personal": {
+          "n_product_items_present_with_rank_and_total": 205,
+          "skipped_missing_listicle_rank": 28,
+          "skipped_missing_total_products_in_listicle": 0,
+          "mean_total_products_in_listicle_for_used_items": 8.570731707317073,
+          "mean_normalized_rank_0_best_1_worst": 0.3533724337280178,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top10": 0.975609756097561,
+            "top1": 0.3170731707317073,
+            "top3": 0.6048780487804878,
+            "top5": 0.8097560975609757
+          },
+          "topk_expected_rates_uniform": {
+            "top1": 0.13534609243314752,
+            "top3": 0.40603827729944186,
+            "top5": 0.6661613564746806,
+            "top10": 0.9586099758219903
+          },
+          "topk_lift_vs_uniform": {
+            "top10": 1.0177337819387846,
+            "top1": 2.3426843363676833,
+            "top3": 1.4897069626132986,
+            "top5": 1.2155554952124468
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.25864000317979574
+        }
+      }
+    },
+    {
+      "path": "data/enrichment/semantic_fidelity_results_gemini_v4.1_solo_25flash.jsonl",
+      "by_bucket": {
+        "gemini": {
+          "n_product_items_present_with_rank_and_total": 365,
+          "skipped_missing_listicle_rank": 24,
+          "skipped_missing_total_products_in_listicle": 1,
+          "mean_total_products_in_listicle_for_used_items": 8.561643835616438,
+          "mean_normalized_rank_0_best_1_worst": 0.3266800969198229,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top1": 0.34794520547945207,
+            "top3": 0.6109589041095891,
+            "top5": 0.7945205479452054,
+            "top10": 0.9671232876712329
+          },
+          "topk_expected_rates_uniform": {
+            "top1": 0.1373052111720206,
+            "top3": 0.4119156335160587,
+            "top5": 0.6744255992390953,
+            "top10": 0.9532652015223313
+          },
+          "topk_lift_vs_uniform": {
+            "top1": 2.5341005087092765,
+            "top3": 1.4832136835752572,
+            "top5": 1.178069973680721,
+            "top10": 1.0145374929524027
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.1644029764448259
+        }
+      }
+    }
+  ]
+}

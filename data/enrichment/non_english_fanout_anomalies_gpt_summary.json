@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "total_flagged_rows": 32,
+    "script::cjk": 14,
+    "unexpected_or_unexplained": 25,
+    "script::jp": 7,
+    "script::non_ascii_other": 5,
+    "script::arabic": 6,
+    "expected_by_prompt_language": 7
+  },
+  "unique_runs_flagged": 32,
+  "example_run_counts": {
+    "P007_r3_enterprise": 1,
+    "P018_r1_enterprise": 1,
+    "P018_r2_enterprise": 1,
+    "P018_r3_enterprise": 1,
+    "P031_r1_enterprise": 1,
+    "P034_r1_enterprise": 1,
+    "P043_r1_enterprise": 1,
+    "P048_r1_enterprise": 1,
+    "P048_r2_enterprise": 1,
+    "P050_r1_enterprise": 1,
+    "P054_r3_enterprise": 1,
+    "P058_r1_enterprise": 1,
+    "P058_r2_enterprise": 1,
+    "P058_r3_enterprise": 1,
+    "P063_r2_enterprise": 1,
+    "P069_r2_enterprise": 1,
+    "P072_r2_enterprise": 1,
+    "P007_r2_personal": 1,
+    "P007_r3_personal": 1,
+    "P017_r3_personal": 1
+  },
+  "unexpected_rows_written_to": "data/enrichment/non_english_fanout_anomalies_gpt_unexpected_only.csv"
+}

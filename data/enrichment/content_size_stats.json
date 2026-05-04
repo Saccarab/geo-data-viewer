@@ -1,0 +1,260 @@
+{
+  "inputs": {
+    "url_content_csv": "datapass/url_content_2026-01-31-04-26-20.csv",
+    "dna_groups_csv": "data/enrichment/full_url_dna_database_with_groups.csv"
+  },
+  "buckets": {
+    "all::listicle": {
+      "total_pages": 2207,
+      "pages_with_content": 70,
+      "coverage_pct": 3.1717263253285,
+      "words": {
+        "n": 70,
+        "mean": 1868.7571428571428,
+        "p25": 741,
+        "median": 2215,
+        "p75": 2972,
+        "p95": 3223
+      },
+      "chars": {
+        "n": 70,
+        "mean": 12585.2,
+        "p25": 5179,
+        "median": 14936,
+        "p75": 20000,
+        "p95": 20000
+      }
+    },
+    "all::product_page": {
+      "total_pages": 1851,
+      "pages_with_content": 103,
+      "coverage_pct": 5.564559697460832,
+      "words": {
+        "n": 103,
+        "mean": 873.8737864077669,
+        "p25": 443,
+        "median": 710,
+        "p75": 1208,
+        "p95": 2040
+      },
+      "chars": {
+        "n": 103,
+        "mean": 5894.514563106796,
+        "p25": 3235,
+        "median": 4917,
+        "p75": 7861,
+        "p95": 13615
+      }
+    },
+    "in_gemini_top10::listicle": {
+      "total_pages": 1059,
+      "pages_with_content": 23,
+      "coverage_pct": 2.1718602455146363,
+      "words": {
+        "n": 23,
+        "mean": 2132.8695652173915,
+        "p25": 1444,
+        "median": 2510,
+        "p75": 2947,
+        "p95": 3114
+      },
+      "chars": {
+        "n": 23,
+        "mean": 14225.08695652174,
+        "p25": 9240,
+        "median": 16263,
+        "p75": 19985,
+        "p95": 20000
+      }
+    },
+    "in_gemini_top10::product_page": {
+      "total_pages": 604,
+      "pages_with_content": 36,
+      "coverage_pct": 5.960264900662252,
+      "words": {
+        "n": 36,
+        "mean": 1101.5555555555557,
+        "p25": 706,
+        "median": 1170,
+        "p75": 1395,
+        "p95": 2040
+      },
+      "chars": {
+        "n": 36,
+        "mean": 7158.666666666667,
+        "p25": 4886,
+        "median": 7084,
+        "p75": 9009,
+        "p95": 13615
+      }
+    },
+    "in_gpt_enterprise_p1::listicle": {
+      "total_pages": 524,
+      "pages_with_content": 23,
+      "coverage_pct": 4.3893129770992365,
+      "words": {
+        "n": 23,
+        "mean": 1410.0,
+        "p25": 244,
+        "median": 954,
+        "p75": 2683,
+        "p95": 3010
+      },
+      "chars": {
+        "n": 23,
+        "mean": 9830.434782608696,
+        "p25": 2329,
+        "median": 8283,
+        "p75": 17441,
+        "p95": 20000
+      }
+    },
+    "in_gpt_enterprise_p1::product_page": {
+      "total_pages": 692,
+      "pages_with_content": 46,
+      "coverage_pct": 6.6473988439306355,
+      "words": {
+        "n": 46,
+        "mean": 763.0217391304348,
+        "p25": 395,
+        "median": 552,
+        "p75": 1090,
+        "p95": 1816
+      },
+      "chars": {
+        "n": 46,
+        "mean": 5332.847826086957,
+        "p25": 2843,
+        "median": 4050,
+        "p75": 7731,
+        "p95": 10923
+      }
+    },
+    "in_gpt_personal_top10::listicle": {
+      "total_pages": 731,
+      "pages_with_content": 24,
+      "coverage_pct": 3.283173734610123,
+      "words": {
+        "n": 24,
+        "mean": 2036.125,
+        "p25": 1290,
+        "median": 2510,
+        "p75": 2947,
+        "p95": 3223
+      },
+      "chars": {
+        "n": 24,
+        "mean": 13426.958333333334,
+        "p25": 8954,
+        "median": 16263,
+        "p75": 19981,
+        "p95": 20000
+      }
+    },
+    "in_gpt_personal_top10::product_page": {
+      "total_pages": 780,
+      "pages_with_content": 48,
+      "coverage_pct": 6.153846153846154,
+      "words": {
+        "n": 48,
+        "mean": 1146.7916666666667,
+        "p25": 706,
+        "median": 1084,
+        "p75": 1395,
+        "p95": 2963
+      },
+      "chars": {
+        "n": 48,
+        "mean": 7398.458333333333,
+        "p25": 4684,
+        "median": 7084,
+        "p75": 9009,
+        "p95": 19849
+      }
+    },
+    "is_cited_by_gemini::listicle": {
+      "total_pages": 374,
+      "pages_with_content": 9,
+      "coverage_pct": 2.406417112299465,
+      "words": {
+        "n": 9,
+        "mean": 2120.8888888888887,
+        "p25": 1286,
+        "median": 2602,
+        "p75": 2683,
+        "p95": 3411
+      },
+      "chars": {
+        "n": 9,
+        "mean": 14231.222222222223,
+        "p25": 10235,
+        "median": 16873,
+        "p75": 18652,
+        "p95": 20000
+      }
+    },
+    "is_cited_by_gemini::product_page": {
+      "total_pages": 191,
+      "pages_with_content": 21,
+      "coverage_pct": 10.99476439790576,
+      "words": {
+        "n": 21,
+        "mean": 1114.1904761904761,
+        "p25": 783,
+        "median": 1170,
+        "p75": 1406,
+        "p95": 2040
+      },
+      "chars": {
+        "n": 21,
+        "mean": 7268.190476190476,
+        "p25": 5316,
+        "median": 7084,
+        "p75": 9090,
+        "p95": 13615
+      }
+    },
+    "is_cited_by_gpt::listicle": {
+      "total_pages": 986,
+      "pages_with_content": 70,
+      "coverage_pct": 7.099391480730223,
+      "words": {
+        "n": 70,
+        "mean": 1868.7571428571428,
+        "p25": 741,
+        "median": 2215,
+        "p75": 2972,
+        "p95": 3223
+      },
+      "chars": {
+        "n": 70,
+        "mean": 12585.2,
+        "p25": 5179,
+        "median": 14936,
+        "p75": 20000,
+        "p95": 20000
+      }
+    },
+    "is_cited_by_gpt::product_page": {
+      "total_pages": 1020,
+      "pages_with_content": 102,
+      "coverage_pct": 10.0,
+      "words": {
+        "n": 102,
+        "mean": 866.5392156862745,
+        "p25": 406,
+        "median": 706,
+        "p75": 1208,
+        "p95": 2040
+      },
+      "chars": {
+        "n": 102,
+        "mean": 5844.941176470588,
+        "p25": 3057,
+        "median": 4886,
+        "p75": 7861,
+        "p95": 13615
+      }
+    }
+  }
+}

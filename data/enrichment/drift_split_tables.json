@@ -1,0 +1,957 @@
+{
+  "methodology": {
+    "bins": [
+      "1-5",
+      "6-10"
+    ],
+    "weighted_avg": "Volume-weighted by order_n per rank",
+    "enterprise_note": "For Bing studies, ranks 6-10 may be omitted; weighted average is computed over ranks 1-5 only. GPT Plus vs Bing is computed only over ranks 1-5."
+  },
+  "features": [
+    "has_tables",
+    "is_current_year_2026",
+    "has_numbered_lists",
+    "has_bullet_points",
+    "has_pros_cons",
+    "has_sources_or_citations",
+    "has_clear_authorship",
+    "expertise_signal_score",
+    "freshness_cue_strength",
+    "readability_score",
+    "heading_density"
+  ],
+  "content_types": [
+    "listicle",
+    "product_page"
+  ],
+  "studies": [
+    "Gemini vs Google",
+    "GPT Plus vs Google",
+    "GPT Plus vs Bing",
+    "GPT Business vs Bing"
+  ],
+  "tables": {
+    "listicle": {
+      "Gemini vs Google": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 2.2991,
+          "bot_6_10_drift_pp": -0.5028,
+          "weighted_avg_drift_pp": 2.3482
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": -6.4993,
+          "bot_6_10_drift_pp": -1.1487,
+          "weighted_avg_drift_pp": -4.0089
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": 2.0809,
+          "bot_6_10_drift_pp": -2.2765,
+          "weighted_avg_drift_pp": 1.8478
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": 3.6008,
+          "bot_6_10_drift_pp": -0.9497,
+          "weighted_avg_drift_pp": 1.7411
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 3.6548,
+          "bot_6_10_drift_pp": -3.5405,
+          "weighted_avg_drift_pp": 1.4623
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": 7.5746,
+          "bot_6_10_drift_pp": 6.1802,
+          "weighted_avg_drift_pp": 6.1553
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": -3.794,
+          "bot_6_10_drift_pp": -5.2444,
+          "weighted_avg_drift_pp": -4.8256
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 3.3432,
+          "bot_6_10_drift_pp": -5.3003,
+          "weighted_avg_drift_pp": 1.4434
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": -0.0218,
+          "bot_6_10_drift_pp": -0.9811,
+          "weighted_avg_drift_pp": -0.3443
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": -0.7605,
+          "bot_6_10_drift_pp": -4.2039,
+          "weighted_avg_drift_pp": -1.9447
+        }
+      ],
+      "GPT Plus vs Google": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 13.4742,
+          "bot_6_10_drift_pp": 11.3638,
+          "weighted_avg_drift_pp": 12.2295
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": 3.0325,
+          "bot_6_10_drift_pp": 8.3426,
+          "weighted_avg_drift_pp": 4.485
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": 5.5033,
+          "bot_6_10_drift_pp": -3.424,
+          "weighted_avg_drift_pp": 2.202
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": 5.501,
+          "bot_6_10_drift_pp": 7.4199,
+          "weighted_avg_drift_pp": 5.74
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 4.7434,
+          "bot_6_10_drift_pp": 0.5055,
+          "weighted_avg_drift_pp": 3.3758
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": -0.4698,
+          "bot_6_10_drift_pp": 8.0343,
+          "weighted_avg_drift_pp": 1.8285
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": 3.3843,
+          "bot_6_10_drift_pp": 0.9653,
+          "weighted_avg_drift_pp": 2.203
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 3.7434,
+          "bot_6_10_drift_pp": 12.3233,
+          "weighted_avg_drift_pp": 6.3101
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": -0.4494,
+          "bot_6_10_drift_pp": -0.8435,
+          "weighted_avg_drift_pp": -0.6606
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": -0.2055,
+          "bot_6_10_drift_pp": 0.5777,
+          "weighted_avg_drift_pp": 0.1458
+        }
+      ],
+      "GPT Plus vs Bing": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 2.8398,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 2.2509
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": 8.8472,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 8.583
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": -3.2152,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -2.9015
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": -8.8049,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -8.8206
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": -9.3628,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -9.1693
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": 2.3321,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 2.2003
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": -7.6917,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -7.6846
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 12.1417,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 11.9666
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": 0.8461,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.8011
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": -0.2618,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.4037
+        }
+      ],
+      "GPT Business vs Bing": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 3.6257,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 3.6428
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": -4.8092,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -4.6352
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": 7.2666,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 7.338
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": 3.3965,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 3.2853
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": -0.6093,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.5957
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": -3.4524,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -3.5652
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": -6.0629,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -5.9324
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 2.1902,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 2.1494
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": -0.4827,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.4669
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": -0.7643,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.7803
+        }
+      ]
+    },
+    "product_page": {
+      "Gemini vs Google": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": -5.4925,
+          "bot_6_10_drift_pp": -6.6772,
+          "weighted_avg_drift_pp": -5.1074
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": -0.532,
+          "bot_6_10_drift_pp": -0.9125,
+          "weighted_avg_drift_pp": -0.5775
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": 10.4447,
+          "bot_6_10_drift_pp": 2.2566,
+          "weighted_avg_drift_pp": 8.7307
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": -7.6938,
+          "bot_6_10_drift_pp": -5.8218,
+          "weighted_avg_drift_pp": -5.7562
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 0.6923,
+          "bot_6_10_drift_pp": -1.0958,
+          "weighted_avg_drift_pp": 0.2604
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": -0.3224,
+          "bot_6_10_drift_pp": 4.4993,
+          "weighted_avg_drift_pp": 1.0264
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": -9.947,
+          "bot_6_10_drift_pp": -15.2976,
+          "weighted_avg_drift_pp": -10.336
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": -4.3526,
+          "bot_6_10_drift_pp": 8.2184,
+          "weighted_avg_drift_pp": -0.6168
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": 0.2739,
+          "bot_6_10_drift_pp": 1.8605,
+          "weighted_avg_drift_pp": 1.0285
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": -6.7285,
+          "bot_6_10_drift_pp": -5.5538,
+          "weighted_avg_drift_pp": -4.8531
+        }
+      ],
+      "GPT Plus vs Google": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 0.2167,
+          "bot_6_10_drift_pp": 1.1346,
+          "weighted_avg_drift_pp": 0.5057
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": 2.1894,
+          "bot_6_10_drift_pp": 1.6406,
+          "weighted_avg_drift_pp": 2.0866
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": -0.569,
+          "bot_6_10_drift_pp": -1.3006,
+          "weighted_avg_drift_pp": -0.7151
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": 0.7099,
+          "bot_6_10_drift_pp": -1.7394,
+          "weighted_avg_drift_pp": -0.0572
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 0.0393,
+          "bot_6_10_drift_pp": 0.0633,
+          "weighted_avg_drift_pp": 0.1009
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": 0.8102,
+          "bot_6_10_drift_pp": -0.3953,
+          "weighted_avg_drift_pp": 0.3804
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": 0.6089,
+          "bot_6_10_drift_pp": -2.8344,
+          "weighted_avg_drift_pp": -0.5908
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 0.5739,
+          "bot_6_10_drift_pp": 0.9843,
+          "weighted_avg_drift_pp": 0.6652
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": 1.1153,
+          "bot_6_10_drift_pp": 1.609,
+          "weighted_avg_drift_pp": 1.2152
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": 1.906,
+          "bot_6_10_drift_pp": 5.657,
+          "weighted_avg_drift_pp": 3.1076
+        }
+      ],
+      "GPT Plus vs Bing": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": 4.9218,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 4.9315
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": 5.3842,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 5.2351
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": -1.063,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.2154
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": -0.134,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.4071
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 0.0578,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.3725
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": 5.3247,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 5.3247
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": 1.1062,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 1.7987
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": 1.4303,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 1.5998
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": 0.0778,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.158
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": 5.5354,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 4.9412
+        }
+      ],
+      "GPT Business vs Bing": [
+        {
+          "feature": "has_tables",
+          "top_1_5_drift_pp": -0.3586,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.3655
+        },
+        {
+          "feature": "is_current_year_2026",
+          "top_1_5_drift_pp": -0.3548,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.2975
+        },
+        {
+          "feature": "has_numbered_lists",
+          "top_1_5_drift_pp": 0.9792,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.8436
+        },
+        {
+          "feature": "has_bullet_points",
+          "top_1_5_drift_pp": -2.0869,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -2.066
+        },
+        {
+          "feature": "has_pros_cons",
+          "top_1_5_drift_pp": 0.6309,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.611
+        },
+        {
+          "feature": "has_clear_authorship",
+          "top_1_5_drift_pp": 0.4225,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 0.3918
+        },
+        {
+          "feature": "expertise_signal_score",
+          "top_1_5_drift_pp": -1.142,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -1.0898
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "top_1_5_drift_pp": -0.3472,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.3146
+        },
+        {
+          "feature": "readability_score",
+          "top_1_5_drift_pp": -0.1641,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": -0.1672
+        },
+        {
+          "feature": "heading_density",
+          "top_1_5_drift_pp": 2.6389,
+          "bot_6_10_drift_pp": null,
+          "weighted_avg_drift_pp": 2.6913
+        }
+      ]
+    }
+  },
+  "categoricals": {
+    "listicle": {
+      "Gemini vs Google": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": 3.0449
+            },
+            {
+              "value": "salesy",
+              "weighted_avg_drift_pp": 2.3524
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": -3.1186
+            },
+            {
+              "value": "opinionated",
+              "weighted_avg_drift_pp": -2.2246
+            },
+            {
+              "value": "mixed",
+              "weighted_avg_drift_pp": -0.2151
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "best_of_list",
+              "weighted_avg_drift_pp": 1.1318
+            },
+            {
+              "value": "directory_listing",
+              "weighted_avg_drift_pp": 0.5342
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "alternatives_list",
+              "weighted_avg_drift_pp": -0.8867
+            },
+            {
+              "value": "other",
+              "weighted_avg_drift_pp": -0.3263
+            },
+            {
+              "value": "comparison_matrix",
+              "weighted_avg_drift_pp": -0.2846
+            },
+            {
+              "value": "faq",
+              "weighted_avg_drift_pp": -0.2618
+            },
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": -0.2596
+            }
+          ]
+        }
+      },
+      "GPT Plus vs Google": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": 6.3896
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": -6.184
+            },
+            {
+              "value": "opinionated",
+              "weighted_avg_drift_pp": -0.2467
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "alternatives_list",
+              "weighted_avg_drift_pp": 0.5047
+            },
+            {
+              "value": "comparison_matrix",
+              "weighted_avg_drift_pp": 0.1974
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "other",
+              "weighted_avg_drift_pp": -0.3215
+            },
+            {
+              "value": "faq",
+              "weighted_avg_drift_pp": -0.3215
+            },
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": -0.183
+            },
+            {
+              "value": "landing_page",
+              "weighted_avg_drift_pp": -0.1591
+            },
+            {
+              "value": "best_of_list",
+              "weighted_avg_drift_pp": -0.1153
+            }
+          ]
+        }
+      },
+      "GPT Plus vs Bing": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": 24.4107
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": -24.2149
+            },
+            {
+              "value": "opinionated",
+              "weighted_avg_drift_pp": -0.578
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "alternatives_list",
+              "weighted_avg_drift_pp": 2.2973
+            },
+            {
+              "value": "best_of_list",
+              "weighted_avg_drift_pp": 0.0871
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": -1.7341
+            }
+          ]
+        }
+      },
+      "GPT Business vs Bing": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": 5.3888
+            },
+            {
+              "value": "opinionated",
+              "weighted_avg_drift_pp": 0.691
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": -5.5704
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "alternatives_list",
+              "weighted_avg_drift_pp": 0.3495
+            },
+            {
+              "value": "best_of_list",
+              "weighted_avg_drift_pp": 0.1212
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": -0.2384
+            }
+          ]
+        }
+      }
+    },
+    "product_page": {
+      "Gemini vs Google": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": 7.0033
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "salesy",
+              "weighted_avg_drift_pp": -6.5888
+            },
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": -0.4146
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "landing_page",
+              "weighted_avg_drift_pp": 0.8696
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "directory_listing",
+              "weighted_avg_drift_pp": -1.0452
+            },
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": -0.9446
+            },
+            {
+              "value": "single_review",
+              "weighted_avg_drift_pp": -0.5587
+            }
+          ]
+        }
+      },
+      "GPT Plus vs Google": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": 0.0725
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "salesy",
+              "weighted_avg_drift_pp": -0.2732
+            },
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": -0.0822
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [
+            {
+              "value": "howto_guide",
+              "weighted_avg_drift_pp": 0.4011
+            },
+            {
+              "value": "landing_page",
+              "weighted_avg_drift_pp": 0.0402
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "announcement_news",
+              "weighted_avg_drift_pp": -0.2506
+            },
+            {
+              "value": "directory_listing",
+              "weighted_avg_drift_pp": -0.2486
+            },
+            {
+              "value": "comparison_matrix",
+              "weighted_avg_drift_pp": -0.2463
+            }
+          ]
+        }
+      },
+      "GPT Plus vs Bing": {
+        "tone": {
+          "top_positive": [],
+          "top_negative": []
+        },
+        "content_format": {
+          "top_positive": [],
+          "top_negative": []
+        }
+      },
+      "GPT Business vs Bing": {
+        "tone": {
+          "top_positive": [
+            {
+              "value": "neutral_informational",
+              "weighted_avg_drift_pp": 0.3771
+            }
+          ],
+          "top_negative": [
+            {
+              "value": "promotional",
+              "weighted_avg_drift_pp": -0.0393
+            }
+          ]
+        },
+        "content_format": {
+          "top_positive": [],
+          "top_negative": []
+        }
+      }
+    }
+  },
+  "sample_sizes": {
+    "listicle": {
+      "Gemini vs Google": {
+        "top_1_5": {
+          "menu_n": 2048,
+          "order_n": 376
+        },
+        "bot_6_10": {
+          "menu_n": 1790,
+          "order_n": 160
+        },
+        "weighted_window": {
+          "menu_n": 3838,
+          "order_n": 536
+        }
+      },
+      "GPT Plus vs Google": {
+        "top_1_5": {
+          "menu_n": 1363,
+          "order_n": 591
+        },
+        "bot_6_10": {
+          "menu_n": 935,
+          "order_n": 274
+        },
+        "weighted_window": {
+          "menu_n": 2298,
+          "order_n": 865
+        }
+      },
+      "GPT Plus vs Bing": {
+        "top_1_5": {
+          "menu_n": 610,
+          "order_n": 124
+        },
+        "bot_6_10": null,
+        "weighted_window": {
+          "menu_n": 610,
+          "order_n": 124
+        }
+      },
+      "GPT Business vs Bing": {
+        "top_1_5": {
+          "menu_n": 672,
+          "order_n": 529
+        },
+        "bot_6_10": null,
+        "weighted_window": {
+          "menu_n": 672,
+          "order_n": 529
+        }
+      }
+    },
+    "product_page": {
+      "Gemini vs Google": {
+        "top_1_5": {
+          "menu_n": 887,
+          "order_n": 135
+        },
+        "bot_6_10": {
+          "menu_n": 860,
+          "order_n": 59
+        },
+        "weighted_window": {
+          "menu_n": 1747,
+          "order_n": 194
+        }
+      },
+      "GPT Plus vs Google": {
+        "top_1_5": {
+          "menu_n": 2089,
+          "order_n": 1055
+        },
+        "bot_6_10": {
+          "menu_n": 1488,
+          "order_n": 527
+        },
+        "weighted_window": {
+          "menu_n": 3577,
+          "order_n": 1582
+        }
+      },
+      "GPT Plus vs Bing": {
+        "top_1_5": {
+          "menu_n": 406,
+          "order_n": 114
+        },
+        "bot_6_10": null,
+        "weighted_window": {
+          "menu_n": 406,
+          "order_n": 114
+        }
+      },
+      "GPT Business vs Bing": {
+        "top_1_5": {
+          "menu_n": 443,
+          "order_n": 355
+        },
+        "bot_6_10": null,
+        "weighted_window": {
+          "menu_n": 443,
+          "order_n": 355
+        }
+      }
+    }
+  }
+}

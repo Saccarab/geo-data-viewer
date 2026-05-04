@@ -1,0 +1,312 @@
+[
+  {
+    "run_id": "P007_r3_enterprise",
+    "query": "\u5b9e\u65f6\u97f3\u9891\u8f6c\u6587\u5b57 \u7ffb\u8bd1 real time audio to text translate",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P018_r1_enterprise",
+    "query": "\u514d\u8d39\u5de5\u5177 \u7ffb\u8bd1\u89c6\u9891 \u5b57\u5e55 \u81ea\u52a8 translate video subtitle free online",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P018_r2_enterprise",
+    "query": "\u7121\u6599 video \u7ffb\u8a33 \u5b57\u5e55 \u81ea\u52d5 \u30b5\u30fc\u30d3\u30b9 free translate subtitles video",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P018_r3_enterprise",
+    "query": "\u514d\u8d39 \u7ffb\u8bd1 \u89c6\u9891 \u81ea\u52a8 \u5b57\u5e55 \u5728\u7ebf tool free translate video subtitles",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P031_r1_enterprise",
+    "query": "\u7121\u6599 \u30aa\u30fc\u30c7\u30a3\u30aa \u30c6\u30ad\u30b9\u30c8 \u81ea\u52d5 \u6587\u5b57\u8d77\u3053\u3057 \u7121\u6599 transcription services",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P034_r1_enterprise",
+    "query": "\u5b9e\u65f6\u7ffb\u8bd1 \u5e94\u7528 Windows during video calls meet translation software Windows",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P043_r1_enterprise",
+    "query": "\u30ea\u30a2\u30eb\u30bf\u30a4\u30e0\u5b57\u5e55 \u30bd\u30d5\u30c8 \u7ffb\u8a33 \u30e9\u30a4\u30d6\u30b3\u30fc\u30eb \u30b5\u30d6\u30bf\u30a4\u30c8\u30eb software live call captions translations",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P048_r1_enterprise",
+    "query": "\u30e9\u30a4\u30d6\u901a\u8a71 \u7ffb\u8a33\u30a2\u30d7\u30ea \u901a\u8a71\u4e2d \u7ffb\u8a33 phone call live translation apps",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P048_r2_enterprise",
+    "query": "\u30ea\u30a2\u30eb\u30bf\u30a4\u30e0 \u7ffb\u8a33 \u901a\u8a71 \u30a2\u30d7\u30ea live translation during calls iPhone Android",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P050_r1_enterprise",
+    "query": "application gratuite traduction temps r\u00e9el appel t\u00e9l\u00e9phonique traduire conversation en direct",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P054_r3_enterprise",
+    "query": "\u5b9e\u65f6 \u4f1a\u8bae \u540c\u58f0 \u7ffb\u8bd1 \u8bbe\u5907 \u8f6f\u4ef6 conference instant translator review",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r1_enterprise",
+    "query": "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0628\u062f\u06cc\u0644 \u06af\u0641\u062a\u0627\u0631 \u0641\u0627\u0631\u0633\u06cc \u0628\u0647 \u0645\u062a\u0646 Persian audio transcription software",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r2_enterprise",
+    "query": "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0628\u062f\u06cc\u0644 \u06af\u0641\u062a\u0627\u0631 \u0641\u0627\u0631\u0633\u06cc \u0628\u0647 \u0645\u062a\u0646 Persian audio to text transcription tools",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r3_enterprise",
+    "query": "\u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0634\u062e\u06cc\u0635 \u06af\u0641\u062a\u0627\u0631 \u0641\u0627\u0631\u0633\u06cc \u062a\u0628\u062f\u06cc\u0644 \u0635\u062f\u0627 \u0628\u0647 \u0645\u062a\u0646 \u0628\u0647\u062a\u0631\u06cc\u0646",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P063_r2_enterprise",
+    "query": "\u5b9e\u65f6\u7ffb\u8bd1\u5de5\u5177 \u4fdd\u6301\u4e0a\u4e0b\u6587 machine translation tool live translation context saving",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P072_r2_enterprise",
+    "query": "\u304a\u3059\u3059\u3081 YouTube video translator extension translate YouTube captions add automatic translation",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P007_r2_personal",
+    "query": "\u5b9e\u65f6 \u97f3\u9891 \u8f6c \u6587\u5b57 \u7ffb\u8bd1 \u670d\u52a1 real time audio to text translation",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P007_r3_personal",
+    "query": "\u5b9e\u65f6 \u97f3\u9891 \u5230 \u6587\u672c \u8f6c\u6362 \u5b9e\u65f6 transcription tools",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P017_r3_personal",
+    "query": "\u30b5\u30fc\u30d3\u30b9 \u8907\u6570 \u97f3\u58f0 \u4f1a\u8a71 \u751f\u6210 \u30c6\u30ad\u30b9\u30c8 \u97f3\u58f0",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P018_r2_personal",
+    "query": "gratis herramientas para traducir video y a\u00f1adir subt\u00edtulos online free video translation subtitle",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P020_r3_personal",
+    "query": "\u5b9e\u65f6 \u5916\u56fd \u8bed\u97f3 \u7ffb\u8bd1 \u89c6\u9891 \u64ad\u653e \u5de5\u5177 real-time audio translation subtitles",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P044_r1_personal",
+    "query": "\u5b9e\u65f6 \u7ffb\u8bd1 \u8f6f\u4ef6 \u89c6\u9891 \u804a\u5929 Zoom Teams \u7ffb\u8bd1 \u63d2\u4ef6",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P044_r3_personal",
+    "query": "\u5b9e\u65f6 \u7ffb\u8bd1 \u8f6f\u4ef6 \u89c6\u9891 \u4f1a\u8bae Zoom Teams live translate captions translation tools",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P047_r1_personal",
+    "query": "Chrome \u63d2\u4ef6 \u5b9e\u65f6 \u4e2d\u6587 \u82f1\u8bed \u7ffb\u8bd1 Chrome extension live Chinese English translate",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P048_r1_personal",
+    "query": "\u00bfpuedo agregar traducci\u00f3n en vivo a llamadas telef\u00f3nicas aplicaci\u00f3n traducci\u00f3n en llamadas",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P050_r2_personal",
+    "query": "application gratuite traduction en temps r\u00e9el appels t\u00e9l\u00e9phoniques fran\u00e7ais english real time call translation app",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r1_personal",
+    "query": "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0628\u062f\u06cc\u0644 \u0635\u0648\u062a \u0641\u0627\u0631\u0633\u06cc \u0628\u0647 \u0645\u062a\u0646 audio to text Farsi transcription software",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r2_personal",
+    "query": "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0628\u062f\u06cc\u0644 \u06af\u0641\u062a\u0627\u0631 \u0641\u0627\u0631\u0633\u06cc \u0628\u0647 \u0645\u062a\u0646 audio to text Farsi transcription",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P058_r3_personal",
+    "query": "\u0628\u0647\u062a\u0631\u06cc\u0646 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631 \u062a\u0628\u062f\u06cc\u0644 \u06af\u0641\u062a\u0627\u0631 \u0641\u0627\u0631\u0633\u06cc \u0628\u0647 \u0645\u062a\u0646 Persian audio to text software",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P063_r1_personal",
+    "query": "\u5b9e\u65f6\u7ffb\u8bd1 \u4fdd\u5b58\u4e0a\u4e0b\u6587 \u673a\u5668\u7ffb\u8bd1 \u5de5\u5177 live translation context aware",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P063_r3_personal",
+    "query": "\u5b9e\u65f6\u7ffb\u8bd1 \u5de5\u5177 \u4fdd\u5b58 \u4e0a\u4e0b\u6587 best live translation tool that keeps context",
+    "model": "GPT"
+  },
+  {
+    "run_id": "P019_r1",
+    "query": "comparatif logiciels traduction simultan\u00e9e 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r1",
+    "query": "meilleur logiciel traduction instantan\u00e9e 2025 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r1",
+    "query": "meilleure application traduction instantan\u00e9e voix texte 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r2",
+    "query": "meilleur logiciel traduction instantan\u00e9e 2025 2026 comparatif",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r2",
+    "query": "meilleurs outils traduction vocale instantan\u00e9e 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r3",
+    "query": "meilleur logiciel de traduction instantan\u00e9e 2025 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r3",
+    "query": "comparatif logiciels traduction instantan\u00e9e texte et voix 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P019_r3",
+    "query": "meilleur logiciel de traduction vocale instantan\u00e9e 2025 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r1",
+    "query": "\u5b9e\u65f6\u7ffb\u8bd1 \u8bed\u97f3\u7ffb\u8bd1 \u8f6f\u4ef6 \u6392\u884c\u699c 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r1",
+    "query": "2025\u5e74 \u5b9e\u65f6\u7ffb\u8bd1\u8f6f\u4ef6 \u63a8\u8350 \u8bc4\u4ef7",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r1",
+    "query": "\u597d\u7528\u7684\u5b9e\u65f6\u7ffb\u8bd1\u8f6f\u4ef6 \u624b\u673a \u7535\u8111",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r3",
+    "query": "2025\u5e74 \u6700\u597d\u7528\u7684\u5b9e\u65f6\u7ffb\u8bd1\u8f6f\u4ef6 \u63a8\u8350",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r3",
+    "query": "PC \u5b9e\u65f6\u7ffb\u8bd1\u8f6f\u4ef6 \u5c4f\u5e55\u7ffb\u8bd1 \u63a8\u8350 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r3",
+    "query": "2026\u5e74 \u5b9e\u65f6\u7ffb\u8bd1 \u8f6f\u4ef6 \u6392\u884c\u699c",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P032_r3",
+    "query": "\u624b\u673a\u5b9e\u65f6\u7ffb\u8bd1\u8f6f\u4ef6 \u54ea\u4e2a\u597d\u7528 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P038_r2",
+    "query": "en iyi anl\u0131k ses \u00e7eviri programlar\u0131 2025 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P038_r2",
+    "query": "yapay zeka destekli anl\u0131k ses \u00e7eviri ara\u00e7lar\u0131",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P038_r3",
+    "query": "anl\u0131k ses \u00e7evirisi yapan programlar 2024 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P038_r3",
+    "query": "canl\u0131 sesli \u00e7eviri uygulamalar\u0131 mobil ve masa\u00fcst\u00fc",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P060_r3",
+    "query": "anl\u0131k sesli \u00e7eviri uygulamalar\u0131 mobil ve masa\u00fcst\u00fc",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P060_r3",
+    "query": "ekran \u00e7evirisi yapan programlar PC ve mobil",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P060_r3",
+    "query": "en iyi anl\u0131k \u00e7eviri programlar\u0131 2024 2025",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r1",
+    "query": "dispositivos de traducci\u00f3n instant\u00e1nea en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r1",
+    "query": "mejores aplicaciones y herramientas para traducci\u00f3n en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r1",
+    "query": "c\u00f3mo traducir conversaciones en tiempo real con inteligencia artificial",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r2",
+    "query": "mejores aplicaciones de traducci\u00f3n en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r2",
+    "query": "gafas de traducci\u00f3n en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r2",
+    "query": "dispositivos de traducci\u00f3n instant\u00e1nea voz a voz 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r3",
+    "query": "dispositivos de traducci\u00f3n instant\u00e1nea en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r3",
+    "query": "mejores aplicaciones de traducci\u00f3n en tiempo real 2026",
+    "model": "Gemini"
+  },
+  {
+    "run_id": "P062_r3",
+    "query": "tecnolog\u00eda de traducci\u00f3n simult\u00e1nea voz a voz 2026",
+    "model": "Gemini"
+  }
+]

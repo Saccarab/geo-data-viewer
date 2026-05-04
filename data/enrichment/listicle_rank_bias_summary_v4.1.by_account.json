@@ -1,0 +1,59 @@
+{
+  "summaries": [
+    {
+      "path": "data/enrichment/semantic_fidelity_results_gpt_v4.1_solo_gpt5mini.jsonl",
+      "by_bucket": {
+        "gpt::enterprise": {
+          "n_product_items_present_with_rank_and_total": 391,
+          "skipped_missing_listicle_rank": 49,
+          "skipped_missing_total_products_in_listicle": 0,
+          "mean_total_products_in_listicle_for_used_items": 10.953964194373402,
+          "mean_normalized_rank_0_best_1_worst": 0.3628354593794427,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top3": 0.5089514066496164,
+            "top5": 0.7595907928388747,
+            "top10": 0.9386189258312021,
+            "top1": 0.18925831202046037
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.2584260629396324
+        },
+        "gpt::personal": {
+          "n_product_items_present_with_rank_and_total": 205,
+          "skipped_missing_listicle_rank": 28,
+          "skipped_missing_total_products_in_listicle": 0,
+          "mean_total_products_in_listicle_for_used_items": 8.570731707317073,
+          "mean_normalized_rank_0_best_1_worst": 0.3533724337280178,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top10": 0.975609756097561,
+            "top1": 0.3170731707317073,
+            "top3": 0.6048780487804878,
+            "top5": 0.8097560975609757
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.25864000317979574
+        }
+      }
+    },
+    {
+      "path": "data/enrichment/semantic_fidelity_results_gemini_v4.1_solo_25flash.jsonl",
+      "by_bucket": {
+        "gemini": {
+          "n_product_items_present_with_rank_and_total": 365,
+          "skipped_missing_listicle_rank": 24,
+          "skipped_missing_total_products_in_listicle": 1,
+          "mean_total_products_in_listicle_for_used_items": 8.561643835616438,
+          "mean_normalized_rank_0_best_1_worst": 0.3266800969198229,
+          "median_listicle_rank": 3,
+          "topk_rates": {
+            "top1": 0.34794520547945207,
+            "top3": 0.6109589041095891,
+            "top5": 0.7945205479452054,
+            "top10": 0.9671232876712329
+          },
+          "pearson_corr_response_product_order_vs_listicle_rank": 0.1644029764448259
+        }
+      }
+    }
+  ]
+}

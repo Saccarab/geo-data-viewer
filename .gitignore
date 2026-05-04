@@ -1,0 +1,7 @@
+# SQLite runtime files (transient WAL/shared-memory) — never commit these.
+*.db-shm
+*.db-wal
+
+# The main SQLite database (geo_fresh.db, ~157 MB) is stored via Git LFS.
+# To exclude it from the repo instead, uncomment the line below:
+# geo_fresh.db

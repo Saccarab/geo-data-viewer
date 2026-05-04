@@ -1,0 +1,430 @@
+{
+  "total_runs": 474,
+  "case1": {
+    "label": "Foreign-language prompt with English fanout",
+    "count": 30,
+    "pct": 6.3,
+    "runs": [
+      {
+        "run_id": "P019_r1",
+        "account": "enterprise",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P019_r2",
+        "account": "enterprise",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P019_r3",
+        "account": "enterprise",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P032_r1",
+        "account": "enterprise",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P032_r2",
+        "account": "enterprise",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P032_r3",
+        "account": "enterprise",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P038_r1",
+        "account": "enterprise",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P038_r2",
+        "account": "enterprise",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P038_r3",
+        "account": "enterprise",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P055_r1",
+        "account": "enterprise",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P055_r2",
+        "account": "enterprise",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P055_r3",
+        "account": "enterprise",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P060_r1",
+        "account": "enterprise",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P060_r2",
+        "account": "enterprise",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P060_r3",
+        "account": "enterprise",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P019_r1_personal",
+        "account": "personal",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P019_r2_personal",
+        "account": "personal",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P019_r3_personal",
+        "account": "personal",
+        "prompt": "Quel est le meilleur logiciel de traduction instantané ?"
+      },
+      {
+        "run_id": "P032_r1_personal",
+        "account": "personal",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P032_r2_personal",
+        "account": "personal",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P032_r3_personal",
+        "account": "personal",
+        "prompt": "什么实时翻译软件好用？"
+      },
+      {
+        "run_id": "P038_r1_personal",
+        "account": "personal",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P038_r2_personal",
+        "account": "personal",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P038_r3_personal",
+        "account": "personal",
+        "prompt": "Anlık ses çevirisi yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P055_r1_personal",
+        "account": "personal",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P055_r2_personal",
+        "account": "personal",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P055_r3_personal",
+        "account": "personal",
+        "prompt": "Welche Transkriptionssoftware ist die beste?"
+      },
+      {
+        "run_id": "P060_r1_personal",
+        "account": "personal",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P060_r2_personal",
+        "account": "personal",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      },
+      {
+        "run_id": "P060_r3_personal",
+        "account": "personal",
+        "prompt": "Anlık çeviri yapan programlar nelerdir?"
+      }
+    ]
+  },
+  "case2": {
+    "label": "English prompt + expected non-English fanout",
+    "count": 9,
+    "pct": 1.9,
+    "runs": [
+      {
+        "run_id": "P050_r1",
+        "account": "enterprise",
+        "prompt": "Can you recommend a free app for live time translation during a call with French speakers?",
+        "non_en_queries": [
+          "application gratuite traduction temps réel appel téléphonique traduire conversation en direct"
+        ]
+      },
+      {
+        "run_id": "P058_r1",
+        "account": "enterprise",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "بهترین نرم افزار تبدیل گفتار فارسی به متن Persian audio transcription software"
+        ]
+      },
+      {
+        "run_id": "P058_r2",
+        "account": "enterprise",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "بهترین نرم افزار تبدیل گفتار فارسی به متن Persian audio to text transcription tools"
+        ]
+      },
+      {
+        "run_id": "P058_r3",
+        "account": "enterprise",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "نرم افزار تشخیص گفتار فارسی تبدیل صدا به متن بهترین"
+        ]
+      },
+      {
+        "run_id": "P047_r1_personal",
+        "account": "personal",
+        "prompt": "I need a Chrome extension for live Chinese to English translation that works better than the built-in live caption featu",
+        "non_en_queries": [
+          "Chrome 插件 实时 中文 英语 翻译 Chrome extension live Chinese English translate"
+        ]
+      },
+      {
+        "run_id": "P050_r2_personal",
+        "account": "personal",
+        "prompt": "Can you recommend a free app for live time translation during a call with French speakers?",
+        "non_en_queries": [
+          "application gratuite traduction en temps réel appels téléphoniques français english real time call translation app"
+        ]
+      },
+      {
+        "run_id": "P058_r1_personal",
+        "account": "personal",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "بهترین نرم افزار تبدیل صوت فارسی به متن audio to text Farsi transcription software"
+        ]
+      },
+      {
+        "run_id": "P058_r2_personal",
+        "account": "personal",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "بهترین نرم افزار تبدیل گفتار فارسی به متن audio to text Farsi transcription"
+        ]
+      },
+      {
+        "run_id": "P058_r3_personal",
+        "account": "personal",
+        "prompt": "What is the best software for Parsian/Farsi audio-to-text transcription?",
+        "non_en_queries": [
+          "بهترین نرم افزار تبدیل گفتار فارسی به متن Persian audio to text software"
+        ]
+      }
+    ]
+  },
+  "case3": {
+    "label": "English prompt + anomalous non-English fanout",
+    "count": 23,
+    "pct": 4.9,
+    "runs": [
+      {
+        "run_id": "P007_r3",
+        "account": "enterprise",
+        "prompt": "Is there a real time audio to text translation?",
+        "non_en_queries": [
+          "实时音频转文字 翻译 real time audio to text translate"
+        ]
+      },
+      {
+        "run_id": "P016_r2",
+        "account": "enterprise",
+        "prompt": "I need live transcribing while using online streaming or watching videos.",
+        "non_en_queries": [
+          "实时视频转录 直播 字幕 software live transcription for streaming"
+        ]
+      },
+      {
+        "run_id": "P018_r1",
+        "account": "enterprise",
+        "prompt": "Can you suggest a free website or program that can translate my 20-minute video and add subtitles?",
+        "non_en_queries": [
+          "免费工具 翻译视频 字幕 自动 translate video subtitle free online"
+        ]
+      },
+      {
+        "run_id": "P018_r2",
+        "account": "enterprise",
+        "prompt": "Can you suggest a free website or program that can translate my 20-minute video and add subtitles?",
+        "non_en_queries": [
+          "無料 video 翻訳 字幕 自動 サービス free translate subtitles video"
+        ]
+      },
+      {
+        "run_id": "P018_r3",
+        "account": "enterprise",
+        "prompt": "Can you suggest a free website or program that can translate my 20-minute video and add subtitles?",
+        "non_en_queries": [
+          "免费 翻译 视频 自动 字幕 在线 tool free translate video subtitles"
+        ]
+      },
+      {
+        "run_id": "P031_r1",
+        "account": "enterprise",
+        "prompt": "Are there currently any free audio to text transcription services?",
+        "non_en_queries": [
+          "無料 オーディオ テキスト 自動 文字起こし 無料 transcription services"
+        ]
+      },
+      {
+        "run_id": "P034_r1",
+        "account": "enterprise",
+        "prompt": "Is there a Windows application for live translation during calls in Google Meet or other meetings?",
+        "non_en_queries": [
+          "实时翻译 应用 Windows during video calls meet translation software Windows"
+        ]
+      },
+      {
+        "run_id": "P043_r1",
+        "account": "enterprise",
+        "prompt": "Can you recommend software for live call subtitles in the same language and a separate translation line?",
+        "non_en_queries": [
+          "リアルタイム字幕 ソフト 翻訳 ライブコール サブタイトル software live call captions translations"
+        ]
+      },
+      {
+        "run_id": "P048_r1",
+        "account": "enterprise",
+        "prompt": "Can I add a live translation app to calls?",
+        "non_en_queries": [
+          "ライブ通話 翻訳アプリ 通話中 翻訳 phone call live translation apps"
+        ]
+      },
+      {
+        "run_id": "P048_r2",
+        "account": "enterprise",
+        "prompt": "Can I add a live translation app to calls?",
+        "non_en_queries": [
+          "リアルタイム 翻訳 通話 アプリ live translation during calls iPhone Android"
+        ]
+      },
+      {
+        "run_id": "P054_r3",
+        "account": "enterprise",
+        "prompt": "What is the best instant translator for conferences?",
+        "non_en_queries": [
+          "实时 会议 同声 翻译 设备 软件 conference instant translator review"
+        ]
+      },
+      {
+        "run_id": "P063_r2",
+        "account": "enterprise",
+        "prompt": "What is the best machine translation tool for live translation that saves context?",
+        "non_en_queries": [
+          "实时翻译工具 保持上下文 machine translation tool live translation context saving"
+        ]
+      },
+      {
+        "run_id": "P072_r2",
+        "account": "enterprise",
+        "prompt": "Can you recommend the best video translator extension for YouTube?",
+        "non_en_queries": [
+          "おすすめ YouTube video translator extension translate YouTube captions add automatic translation"
+        ]
+      },
+      {
+        "run_id": "P007_r2_personal",
+        "account": "personal",
+        "prompt": "Is there a real time audio to text translation?",
+        "non_en_queries": [
+          "实时 音频 转 文字 翻译 服务 real time audio to text translation"
+        ]
+      },
+      {
+        "run_id": "P007_r3_personal",
+        "account": "personal",
+        "prompt": "Is there a real time audio to text translation?",
+        "non_en_queries": [
+          "实时 音频 到 文本 转换 实时 transcription tools"
+        ]
+      },
+      {
+        "run_id": "P017_r3_personal",
+        "account": "personal",
+        "prompt": "Can you recommend a text to speech service that can generate such a conversation with multiple voices?",
+        "non_en_queries": [
+          "サービス 複数 音声 会話 生成 テキスト 音声"
+        ]
+      },
+      {
+        "run_id": "P018_r2_personal",
+        "account": "personal",
+        "prompt": "Can you suggest a free website or program that can translate my 20-minute video and add subtitles?",
+        "non_en_queries": [
+          "gratis herramientas para traducir video y añadir subtítulos online free video translation subtitle"
+        ]
+      },
+      {
+        "run_id": "P020_r3_personal",
+        "account": "personal",
+        "prompt": "Request a tool to translate foreign audio to English in real-time during video playback.",
+        "non_en_queries": [
+          "实时 外国 语音 翻译 视频 播放 工具 real-time audio translation subtitles"
+        ]
+      },
+      {
+        "run_id": "P044_r1_personal",
+        "account": "personal",
+        "prompt": "Are there live translation software options for video chats like Zoom or Teams?",
+        "non_en_queries": [
+          "实时 翻译 软件 视频 聊天 Zoom Teams 翻译 插件"
+        ]
+      },
+      {
+        "run_id": "P044_r3_personal",
+        "account": "personal",
+        "prompt": "Are there live translation software options for video chats like Zoom or Teams?",
+        "non_en_queries": [
+          "实时 翻译 软件 视频 会议 Zoom Teams live translate captions translation tools"
+        ]
+      },
+      {
+        "run_id": "P048_r1_personal",
+        "account": "personal",
+        "prompt": "Can I add a live translation app to calls?",
+        "non_en_queries": [
+          "¿puedo agregar traducción en vivo a llamadas telefónicas aplicación traducción en llamadas"
+        ]
+      },
+      {
+        "run_id": "P063_r1_personal",
+        "account": "personal",
+        "prompt": "What is the best machine translation tool for live translation that saves context?",
+        "non_en_queries": [
+          "实时翻译 保存上下文 机器翻译 工具 live translation context aware"
+        ]
+      },
+      {
+        "run_id": "P063_r3_personal",
+        "account": "personal",
+        "prompt": "What is the best machine translation tool for live translation that saves context?",
+        "non_en_queries": [
+          "实时翻译 工具 保存 上下文 best live translation tool that keeps context"
+        ]
+      }
+    ]
+  }
+}

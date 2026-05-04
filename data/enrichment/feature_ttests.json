@@ -1,0 +1,89 @@
+{
+  "ent_vs_pers": {
+    "has_tables": {
+      "m1": 21.3,
+      "m2": 19.1,
+      "diff": 2.2,
+      "t": 2.94,
+      "sig": "p<0.01"
+    },
+    "has_numbered_lists": {
+      "m1": 50.3,
+      "m2": 35.1,
+      "diff": 15.2,
+      "t": 16.29,
+      "sig": "p<0.01"
+    },
+    "has_bullet_points": {
+      "m1": 35.4,
+      "m2": 29.0,
+      "diff": 6.4,
+      "t": 7.24,
+      "sig": "p<0.01"
+    },
+    "is_current_year_2026": {
+      "m1": 15.1,
+      "m2": 17.8,
+      "diff": -2.7,
+      "t": -3.79,
+      "sig": "p<0.01"
+    },
+    "has_clear_authorship": {
+      "m1": 33.6,
+      "m2": 28.7,
+      "diff": 4.9,
+      "t": 5.55,
+      "sig": "p<0.01"
+    }
+  },
+  "gemini_vs_gpt_all": {},
+  "counts": {
+    "enterprise": 4951,
+    "personal": 6279,
+    "gemini": 0
+  },
+  "gemini_order_vs_menu": {
+    "has_bullet_points": {
+      "m1": 74.5,
+      "m2": 78.7,
+      "diff": -4.2,
+      "t": -2.73,
+      "sig": "p<0.01"
+    },
+    "has_numbered_lists": {
+      "m1": 52.8,
+      "m2": 48.9,
+      "diff": 3.9,
+      "t": 2.15,
+      "sig": "p<0.05"
+    },
+    "has_pros_cons": {
+      "m1": 38.1,
+      "m2": 38.8,
+      "diff": -0.8,
+      "t": -0.43,
+      "sig": "ns"
+    },
+    "has_tables": {
+      "m1": 33.4,
+      "m2": 35.8,
+      "diff": -2.4,
+      "t": -1.43,
+      "sig": "ns"
+    },
+    "is_current_year_2026": {
+      "m1": 17.0,
+      "m2": 15.7,
+      "diff": 1.3,
+      "t": 0.99,
+      "sig": "ns"
+    },
+    "is_vendor_owned": {
+      "m1": 23.1,
+      "m2": 24.8,
+      "diff": -1.7,
+      "t": -1.11,
+      "sig": "ns"
+    }
+  }
+}

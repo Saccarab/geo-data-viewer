@@ -1,0 +1,176 @@
+{
+  "tables": {
+    "listicle": {
+      "GPT Plus": [
+        {
+          "feature": "has_bullet_points",
+          "drift_pp": 5.6399
+        },
+        {
+          "feature": "has_clear_authorship",
+          "drift_pp": -5.858
+        },
+        {
+          "feature": "has_numbered_lists",
+          "drift_pp": 5.7907
+        },
+        {
+          "feature": "has_pros_cons",
+          "drift_pp": 3.5774
+        },
+        {
+          "feature": "has_tables",
+          "drift_pp": 7.4057
+        },
+        {
+          "feature": "is_current_year_2026",
+          "drift_pp": 5.1555
+        },
+        {
+          "feature": "expertise_signal_score",
+          "drift_pp": 3.0762
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "drift_pp": 3.569
+        },
+        {
+          "feature": "heading_density",
+          "drift_pp": 3.8939
+        },
+        {
+          "feature": "readability_score",
+          "drift_pp": 0.3648
+        }
+      ],
+      "GPT Business": [
+        {
+          "feature": "has_bullet_points",
+          "drift_pp": -0.3005
+        },
+        {
+          "feature": "has_clear_authorship",
+          "drift_pp": -1.5204
+        },
+        {
+          "feature": "has_numbered_lists",
+          "drift_pp": 3.0813
+        },
+        {
+          "feature": "has_pros_cons",
+          "drift_pp": 3.305
+        },
+        {
+          "feature": "has_tables",
+          "drift_pp": 5.6313
+        },
+        {
+          "feature": "is_current_year_2026",
+          "drift_pp": 7.8282
+        },
+        {
+          "feature": "expertise_signal_score",
+          "drift_pp": 8.0464
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "drift_pp": 7.1454
+        },
+        {
+          "feature": "heading_density",
+          "drift_pp": -2.3775
+        },
+        {
+          "feature": "readability_score",
+          "drift_pp": -2.0124
+        }
+      ]
+    },
+    "product_page": {
+      "GPT Plus": [
+        {
+          "feature": "has_bullet_points",
+          "drift_pp": 9.5052
+        },
+        {
+          "feature": "has_clear_authorship",
+          "drift_pp": -0.7708
+        },
+        {
+          "feature": "has_numbered_lists",
+          "drift_pp": 7.7308
+        },
+        {
+          "feature": "has_pros_cons",
+          "drift_pp": 0.2279
+        },
+        {
+          "feature": "has_tables",
+          "drift_pp": 3.6959
+        },
+        {
+          "feature": "is_current_year_2026",
+          "drift_pp": -3.6092
+        },
+        {
+          "feature": "expertise_signal_score",
+          "drift_pp": -1.5902
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "drift_pp": -1.9587
+        },
+        {
+          "feature": "heading_density",
+          "drift_pp": -0.4496
+        },
+        {
+          "feature": "readability_score",
+          "drift_pp": 1.4277
+        }
+      ],
+      "GPT Business": [
+        {
+          "feature": "has_bullet_points",
+          "drift_pp": 5.8464
+        },
+        {
+          "feature": "has_clear_authorship",
+          "drift_pp": 0.0977
+        },
+        {
+          "feature": "has_numbered_lists",
+          "drift_pp": 5.118
+        },
+        {
+          "feature": "has_pros_cons",
+          "drift_pp": 0.466
+        },
+        {
+          "feature": "has_tables",
+          "drift_pp": 0.0474
+        },
+        {
+          "feature": "is_current_year_2026",
+          "drift_pp": -0.134
+        },
+        {
+          "feature": "expertise_signal_score",
+          "drift_pp": 0.8735
+        },
+        {
+          "feature": "freshness_cue_strength",
+          "drift_pp": -2.026
+        },
+        {
+          "feature": "heading_density",
+          "drift_pp": -0.8511
+        },
+        {
+          "feature": "readability_score",
+          "drift_pp": 2.1097
+        }
+      ]
+    }
+  }
+}
