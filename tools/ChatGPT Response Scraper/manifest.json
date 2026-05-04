@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Response Scraper",
+  "version": "1.0.6",
+  "description": "Research tool for extracting search results from ChatGPT - USE AT YOUR OWN RISK",
+  "author": "LMCM",
+
+  "permissions": [
+    "tabs",
+    "sidePanel",
+    "scripting",
+    "downloads",
+    "storage",
+    "unlimitedStorage",
+    "clipboardRead",
+    "clipboardWrite",
+    "activeTab"
+  ],
+
+  "host_permissions": ["https://chatgpt.com/*"],
+
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "action": {
+    "default_title": "Open ChatGPT Response Scraper"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*", "injected.js"],
+      "matches": ["https://chatgpt.com/*"]
+    }
+  ],
+
+  "minimum_chrome_version": "88",
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

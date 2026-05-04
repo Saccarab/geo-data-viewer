@@ -1,0 +1,146 @@
+You are labeling a web page for a research dataset. Use ONLY the provided inputs (URL, title, snippet/meta, extracted text). Do NOT browse the web.
+
+Return ONLY valid JSON. No markdown. No commentary. No trailing commas.
+If info is missing, use empty string, 0, or [] — do NOT guess.
+
+## Enums
+type (choose exactly one):
+- listicle
+- marketplace_directory
+- app_store_listing
+- product_page
+- category_page
+- review_article
+- comparison_article
+- documentation
+- forum_ugc
+- news_article
+- editorial_article
+- reference
+- other
+
+### Type guidance (important)
+- marketplace_directory: Pages that aggregate multiple software or products into a directory or category listing, often with user ratings and "Visit Website" buttons. Examples: Capterra, G2, SoftwareAdvice, GetApp.
+- app_store_listing: Official app store or extension store pages for a specific product. Examples: Google Play Store, Apple App Store, Chrome Web Store, Edge Add-ons Store.
+- listicle: Articles or blog posts titled like "Best [X] tools for [Y]" or "Top 10 [X]". Usually written by a publisher/author rather than being a automated directory.
+- reference: high-authority neutral reference/encyclopedia/knowledge-base pages whose primary goal is factual description (not selling/reviewing). Examples: Wikipedia, official standards.
+
+content_format (choose exactly one):
+- best_of_list
+- alternatives_list
+- comparison_matrix
+- single_review
+- howto_guide
+- faq
+- landing_page
+- directory_listing
+- announcement_news
+- other
+
+tone (choose exactly one):
+- neutral_informational
+- promotional
+- salesy
+- academic_technical
+- opinionated
+- other
+
+primary_intent (choose exactly one):
+- informational
+- commercial
+- transactional
+- navigational
+
+mention_type (for products found in lists; choose exactly one):
+- headline
+- subheading_best_for
+- paragraph_blurb
+- comparison_table
+- pros_cons_block
+- other
+
+## Scales
+promotional_intensity_score: integer 0–5
+expertise_signal_score: integer 0–5
+spamminess_score: integer 0–5
+freshness_cue_strength: integer 0–5
+heading_density: integer 0–5 (0=no subheadings, 5=very frequent subheadings/sections)
+readability_score: integer 0–5
+has_tables: 1 if the page contains data grids, comparison tables, or structured rows/columns of data.
+has_numbered_lists: 1 if the page uses explicit "1., 2., 3." or "First, Second..." numbering for items.
+has_bullet_points: 1 if the page uses clear bulleted lists (e.g., lines starting with "-", "•", or "*").
+has_pros_cons: 1 if the page clearly contains a Pros/Cons section or equivalent.
+has_clear_authorship: 1 if explicit author/editor attribution exists.
+has_sources_or_citations: 1 if the page text indicates sources/references/citations.
+listicle_has_ranked_order: 1 if the listicle uses rankings.
+is_current_year_2026: 1 if the page explicitly mentions "2026" in the title or text as the current/target year for the content.
+
+## Definitions
+readability_score (0–5): How easy the page is to scan and understand based on the text structure (clear headings, concise paragraphs, simple language). 5 = exceptionally readable.
+has_pros_cons (0/1): 1 if the page clearly contains a Pros/Cons section or equivalent.
+has_clear_authorship (0/1): 1 if explicit author/editor attribution exists.
+has_sources_or_citations (0/1): 1 if the page text indicates sources/references/citations.
+freshness_cue_strength (0–5): Score based ONLY on explicit cues (e.g., "Updated Jan 2026", "2026 in title").
+
+has_clear_authorship (0/1):
+1 if explicit author/editor attribution exists (e.g., “By X”, bio, “Reviewed by”)
+0 otherwise
+
+has_sources_or_citations (0/1):
+1 if the page text indicates sources/references/citations (e.g., “Sources”, “References”, footnotes, “According to …” with source context)
+0 otherwise
+
+freshness_cue_strength (0–5):
+Score based ONLY on explicit cues visible in the provided title/snippet/meta/extracted text (do not guess).
+Examples of cues: "Updated Jan 2026", "Last updated", "2025/2026" in title, "as of 2026", "new for 2026", changelog entries, "recently updated".
+0 = no freshness/updated/current-year cues
+1 = very weak cues (generic "new" wording without any year/date)
+2 = some cues (a year is mentioned OR page has a dated timestamp but not clearly framed as updated/current)
+3 = clear cues (explicit publish date OR clear year framing relevant to recency)
+4 = strong cues (explicit "updated" date OR strong current-year framing)
+5 = very strong cues (explicit "last updated" + current-year framing and/or multiple strong recency signals)
+
+tone definitions (to disambiguate):
+- promotional: marketing-leaning but still informational; highlights benefits/features; limited pressure; few/no aggressive CTAs.
+- salesy: high conversion pressure; repeated CTAs ("buy", "sign up", "start free trial"), urgency/scarcity ("limited time"), discounts/pricing emphasis, lead-capture funnels.
+
+## REQUIRED OUTPUT JSON (MUST match keys exactly)
+{
+  "urls": {
+    "url": "{URL}",
+    "type": "",
+    "content_format": "",
+    "tone": "",
+    "promotional_intensity_score": 0,
+    "freshness_cue_strength": 0,
+    "is_current_year_2026": 0,
+    "readability_score": 0,
+    "heading_density": 0,
+    "has_tables": 0,
+    "has_numbered_lists": 0,
+    "has_bullet_points": 0,
+    "has_pros_cons": 0,
+    "has_clear_authorship": 0,
+    "has_sources_or_citations": 0,
+    "listicle_has_ranked_order": 0,
+    "expertise_signal_score": 0,
+    "spamminess_score": 0,
+    "primary_intent": "",
+    "is_vendor_owned": 0
+  },
+}
+
+## Critical Heuristics (MANDATORY)
+1. URL Analysis: If the URL contains "/blog/", "/articles/", or "/news/", the type is almost certainly "listicle" or "news_article", NOT "marketplace_directory".
+2. Vendor Detection: If the domain of the URL (e.g., taption.com) is also one of the products being recommended or discussed on the page, set "is_vendor_owned": 1 and the tone MUST be "promotional" or "salesy".
+3. Directory vs Listicle: A "marketplace_directory" is a site-wide database (G2, Capterra). A single page with a "Top 10" list is a "listicle". Do NOT use "marketplace_directory" for blog posts.
+4. Format vs Type: Do not let the presence of a list force you into "directory". Most lists are "listicles".
+5. NO PRODUCT EXTRACTION: Do NOT list individual products in listicle_products. Focus ONLY on the page-level DNA.
+
+## Inputs
+URL: {URL}
+Title: {TITLE}
+Snippet/meta: {SNIPPET_OR_META_DESCRIPTION}
+
+Extracted text (may be truncated):
+{EXTRACTED_TEXT}

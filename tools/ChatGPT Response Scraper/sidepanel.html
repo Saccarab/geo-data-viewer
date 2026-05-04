@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Response Scraper</title>
+    <link rel="stylesheet" href="sidepanel.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-robot header-icon"></i>
+                <div class="header-text">
+                    <h1>ChatGPT Scraper</h1>
+                    <p>Automated Response Collection Tool</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Disclaimer Section -->
+            <section class="disclaimer-section">
+                <div class="disclaimer-content">
+                    <i class="fas fa-exclamation-triangle disclaimer-icon"></i>
+                    <div class="disclaimer-text">
+                        <h3>Legal Disclaimer</h3>
+                        <p>This tool may violate OpenAI's Terms of Service. Use responsibly and at your own risk. Consider using the official OpenAI API for production applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <i class="fas fa-cloud-upload-alt drop-icon"></i>
+                        <h3>Upload CSV File</h3>
+                        <p>Drop your CSV file here or click to select</p>
+                        <p class="file-requirements">CSV must contain a 'query' column</p>
+                    </div>
+                    <input type="file" id="fileInput" accept=".csv" style="display: none;">
+                </div>
+
+                <div class="status-message" id="status" style="display: none;"></div>
+                
+                <div class="file-info-card" id="fileInfoCard" style="display: none;">
+                    <div class="file-info-header">
+                        <i class="fas fa-file-csv"></i>
+                        <span class="file-name" id="fileName"></span>
+                    </div>
+                    <div class="file-stats">
+                        <div class="stat">
+                            <span class="stat-label">Queries:</span>
+                            <span class="stat-value" id="queryCount">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Size:</span>
+                            <span class="stat-value" id="fileSize">0 KB</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configuration Section -->
+            <section class="config-section" id="configSection" style="display: none;">
+                <h3><i class="fas fa-cog"></i> Configuration</h3>
+                <div class="config-grid">
+                    <div class="config-item">
+                        <label for="runsPerQ">
+                            <i class="fas fa-repeat"></i>
+                            Runs per Query
+                        </label>
+                        <div class="input-group">
+                            <input type="number" id="runsPerQ" min="1" max="10" value="1">
+                            <span class="input-hint">1-10 runs</span>
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <label>
+                            <i class="fas fa-calculator"></i>
+                            Total Operations
+                        </label>
+                        <div class="total-operations" id="totalOps">0</div>
+                    </div>
+                </div>
+                
+                <!-- Web Search Toggle -->
+                <div class="config-toggle-section">
+                    <div class="toggle-item">
+                        <div class="toggle-info">
+                            <label for="webSearchToggle">
+                                <i class="fas fa-search"></i>
+                                Force Web Search
+                            </label>
+                            <span class="toggle-description">Enable web search for all queries. Sources are collected regardless of this setting.</span>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="webSearchToggle">
+                            <label for="webSearchToggle" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Auto-Checkpoint (NEW) -->
+                    <div class="toggle-item">
+                        <div class="toggle-info">
+                            <label for="checkpointEvery">
+                                <i class="fas fa-save"></i>
+                                Auto-save Checkpoint
+                            </label>
+                            <span class="toggle-description">Save results every N queries to prevent data loss. Recommended for large runs (80+ queries).</span>
+                        </div>
+                        <div class="input-group compact">
+                            <input type="number" id="checkpointEvery" min="0" max="100" value="20" style="width: 60px;">
+                            <span class="input-hint">0 = off</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Include Raw API (NEW) -->
+                    <div class="toggle-item">
+                        <div class="toggle-info">
+                            <label for="includeRawApi">
+                                <i class="fas fa-database"></i>
+                                Include Raw API Data
+                            </label>
+                            <span class="toggle-description">Include full streaming response (~90% larger files). Disable for faster downloads.</span>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="includeRawApi">
+                            <label for="includeRawApi" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-info">
+                    <div class="info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>The scraper will automatically create new temporary chats for each query. Delays are added between requests to be respectful of ChatGPT's servers. Source links are collected when available.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Section -->
+            <section class="action-section" id="actionSection" style="display: none;">
+                <button id="startButton" class="action-button">
+                    <i class="fas fa-play"></i>
+                    <span>Start Scraping</span>
+                </button>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-header">
+                    <h3><i class="fas fa-tasks"></i> Progress</h3>
+                    <div class="progress-status" id="progressStatus">Initializing...</div>
+                </div>
+                
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressPercent">0%</span>
+                        <span id="progressCount">0 / 0</span>
+                    </div>
+                </div>
+
+                <div class="current-task" id="currentTask">
+                    <div class="task-info">
+                        <div class="task-label">Current Query:</div>
+                        <div class="task-content" id="currentQuery">-</div>
+                    </div>
+                    <div class="task-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="stat-label">Completed:</span>
+                            <span class="stat-value" id="completedCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span class="stat-label">Est. Time:</span>
+                            <span class="stat-value" id="estimatedTime">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span class="stat-label">Errors:</span>
+                            <span class="stat-value" id="errorCount">0</span>
+                        </div>
+                    </div>
+
+                    <div class="mid-session-actions" style="margin-top: 15px; text-align: center; display: flex; gap: 8px; flex-direction: column;">
+                        <button id="pauseResumeButton" class="secondary-button" style="width: 100%; padding: 8px; font-size: 0.9em;">
+                            <i class="fas fa-pause"></i> Pause (keep context)
+                        </button>
+                        <button id="midSessionDownload" class="secondary-button" style="width: 100%; padding: 8px; font-size: 0.9em;">
+                            <i class="fas fa-download"></i> Download Current Progress
+                        </button>
+                    </div>
+
+                <div class="recent-errors" id="recentErrors" style="display: none;">
+                    <h4><i class="fas fa-exclamation-circle"></i> Recent Errors</h4>
+                    <div class="error-list" id="errorList"></div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h3><i class="fas fa-download"></i> Results</h3>
+                    <div class="results-summary">
+                        <span id="resultsSummary">Scraping completed successfully!</span>
+                    </div>
+                </div>
+                
+                <div class="download-info">
+                    <i class="fas fa-file-csv"></i>
+                    <div class="download-details">
+                        <div class="download-filename" id="downloadFilename">chatgpt_results.csv</div>
+                        <div class="download-size" id="downloadSize">Preparing download...</div>
+                    </div>
+                </div>
+
+                <button id="downloadButton" class="download-button">
+                    <i class="fas fa-download"></i>
+                    <span>Download Results</span>
+                </button>
+
+                <button id="newCollectionButton" class="secondary-button">
+                    <i class="fas fa-plus"></i>
+                    <span>Start New Scraping</span>
+                </button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#" id="helpLink"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="https://platform.openai.com/docs/api-reference" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Official API
+                </a>
+            </div>
+            <div class="version">v1.0.0</div>
+        </footer>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
