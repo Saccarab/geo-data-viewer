@@ -12,6 +12,8 @@ Self-contained Flask app + SQLite data viewer for the v1 (January 2026) study.
 | `data/enrichment/*.json` | Pre-computed enrichment outputs the viewer reads |
 | `datapass/*.csv` and `*.jsonl` | v1 ChatGPT runs + page labels |
 | `datapass/citation_mappings/` | Per-run citation mapping JSONs |
+| `tools/` | Chrome extensions used to gather the study data (Bing/Google/ChatGPT scrapers, URL Content Fetcher, Vertex Resolver). See [Tools](#tools) below. |
+| `prompts/` | LLM prompts used in the enrichment pipeline (page labeler + analysis drafts). See `prompts/README.md`. |
 
 ## Cloning
 
@@ -43,6 +45,21 @@ DATA_VIEWER_DEBUG=1 python data_viewer.py
 ```
 
 (On Windows PowerShell: `$env:DATA_VIEWER_DEBUG=1; python data_viewer.py`)
+
+## Tools
+
+Six unpacked Chrome extensions live under `tools/`. They're not needed to run the viewer — they're the data-collection side, included for reproducibility.
+
+| Folder | What it does |
+|---|---|
+| `Bing Deep Hunter` | Drives Bing search for deeper result harvesting |
+| `Bing Results Scraper` | Bulk-scrapes Bing SERPs from a CSV of queries |
+| `Google Results Scraper` | Bulk-scrapes Google SERPs from a CSV of queries |
+| `ChatGPT Response Scraper` | Replays prompts in ChatGPT and captures responses + citations |
+| `URL Content Fetcher` | Fetches and cleans page content from URLs |
+| `VertexResolverExtension` | Resolves redirect/vertex URLs to their final destinations |
+
+To load any of them: open `chrome://extensions`, enable Developer Mode, click "Load unpacked", and select the folder.
 
 ## Notes
 
