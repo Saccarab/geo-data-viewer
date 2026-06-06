@@ -52,9 +52,7 @@ Six unpacked Chrome extensions live under `tools/`. They're not needed to run th
 
 | Folder | What it does |
 |---|---|
-| `Bing Deep Hunter` | Drives Bing search for deeper result harvesting |
 | `Bing Results Scraper` | Bulk-scrapes Bing SERPs from a CSV of queries |
-| `Google Results Scraper` | Bulk-scrapes Google SERPs from a CSV of queries |
 | `ChatGPT Response Scraper` | Replays prompts in ChatGPT and captures responses + citations |
 | `URL Content Fetcher` | Fetches and cleans page content from URLs |
 | `VertexResolverExtension` | Resolves redirect/vertex URLs to their final destinations |
