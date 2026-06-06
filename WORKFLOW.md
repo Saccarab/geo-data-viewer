@@ -131,9 +131,17 @@ SERPAPI_API_KEY=... node scripts/collect_serpapi_results.mjs --v3
 
 ---
 
-## 5. Normalize + match
+## 5. Normalize + match — `scripts/normalize_and_match.py`
 
-Normalize URLs (strip `utm_*`, `gclid`, trailing slash, lowercase host), then check which **cited** URLs appear in the Bing/Google results for the same run → the overlap / "invisible" rate, per tier.
+Check which **cited** URLs appear in the Bing/Google results for the same run → the overlap (and "invisible" rate), per tier. URLs are normalized first with one consistent rule across all waves so the numbers stay comparable: **lowercase, strip protocol + `www`, drop the query string and fragment, drop a trailing slash** (`https://www.example.com/page?id=5#x` → `example.com/page`).
+
+```bash
+python scripts/normalize_and_match.py     --chatgpt chatgpt_results_business.csv     --bing    bing_results_business.csv     --google-dir data/serpapi_v3_google_results     --account business     [--out matches.csv]
+```
+
+**Output** — % of cited links found in Bing, in Google, in either (coverage), and in neither (invisible), for that tier. `--out` writes a per-citation match table (`run_id, url, in_bing, in_google, covered`). Run once per tier.
+
+> Use the **same normalization for every wave** — it matters. A stricter rule (keeping `www`/query params) undercounts overlap by ~2–5 points, which can look like a decline that's really just a matching artifact.
 
 ---
 
