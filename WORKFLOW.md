@@ -4,8 +4,6 @@ End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini respons
 
 > **Where things live:** this repo (the data viewer) bundles the **browser extensions** (`tools/`), the **v1 study data** (`datapass/`, `data/`), and the viewer. The **Node/Python collection scripts** referenced below as `scripts/…` (SerpApi collector, citation-mapping, content fetcher) live in the main research repository — they are not in this repo.
 
-> Keep the **79-prompt set fixed across waves** — it is the longitudinal anchor. Add new prompts as a separate layer going forward; never change the original 79.
-
 ---
 
 ## 0. Setup (do this first — it's what makes a run reproducible)
