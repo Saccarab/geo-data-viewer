@@ -154,9 +154,8 @@ For structural-feature analysis of cited (and additional) URLs.
 3. **Classify** — LLM labeler with `prompts/page_label_dna_only_v1.txt` (GPT-5-mini / Gemini-Flash) → page type + structural features → append to `data/enrichment/full_url_dna_database.csv`.
 
 **Labeling scripts** (main research repo):
-- `scripts/llm/enrich_control_gpt.mjs` — GPT-5-mini labeler over fetched content → `datapass/page_labels_control_gpt5_mini.jsonl`
+- `scripts/llm/enrich_control_gpt_full_content.mjs` — GPT-5-mini labeler over fetched content → `datapass/page_labels_control_gpt5_mini.jsonl`
 - `scripts/llm/enrich_gemini_grounding.mjs` — Gemini 2.5 Flash labeler (same prompt) → `datapass/page_labels_gemini.jsonl`
-- `scripts/llm/enrich_recover_unlabeled.mjs` — catch-up pass for URLs that have fetched content but no label yet (appends to the GPT-5-mini jsonl)
 
 Both judges read the page body from `data/fetched_content/{hash}.txt` (hash of the normalized URL) and return one JSON row per URL.
 
