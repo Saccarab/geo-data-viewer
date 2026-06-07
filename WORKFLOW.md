@@ -109,8 +109,6 @@ run_id, query, position, page_num, url, title, snippet, domain, content
 P0001_r1, "best free AI video translation tools 2026", 1, 1, https://www.unite.ai/best-ai-video-translation-tools/, "10 Best AI Video Translation Tools...", "...", unite.ai, "<extracted page text>"
 ```
 
-> **TODO: confirm** — exact depth/pagination setting used to reach ~rank 200.
-
 ---
 
 ## 4. Scrape Google — `scripts/collect_serpapi_results.mjs`
