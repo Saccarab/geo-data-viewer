@@ -12,7 +12,7 @@ End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini respons
 |---|---|
 | **US proxy** | Windscribe **browser extension**, location **Atlanta – Peachtree**. Apply to the browser tools (ChatGPT scraper, Bing tools). Without it, ChatGPT injects non-US localized searches. |
 | **Accounts** | One ChatGPT **Business** (enterprise/edu tier), one **Plus** (consumer). Always run in **Temporary Chat**. |
-| **API keys** | `SERPAPI_API_KEY` (Google). `GEMINI_API_KEY` (for the DNA classifier / Gemini path). |
+| **API keys** | `SERPAPI_API_KEY` (Google). `GEMINI_API_KEY` (for the DNA classifier / Gemini path). `OPEN_AI_KEY` (for the GPT-5-mini DNA labeler). |
 | **Extensions** | Load unpacked from `tools/` at `chrome://extensions` → Developer mode → Load unpacked. |
 
 SerpApi (Google) sets US locale **in code** (`location: "United States"`), so it does **not** use the Windscribe proxy. Browser tools do.
