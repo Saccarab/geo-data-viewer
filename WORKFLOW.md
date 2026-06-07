@@ -6,7 +6,7 @@ End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini respons
 
 ---
 
-## 0. Setup (do this first — it's what makes a run reproducible)
+## 0. Setup
 
 | Thing | Value |
 |---|---|
