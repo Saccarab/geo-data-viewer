@@ -163,13 +163,7 @@ Both judges read the page body from `data/fetched_content/{hash}.txt` (hash of t
 
 ---
 
-## 7. Inspect / validate — the viewer
-
-Load the matched + enriched data into [`geo-data-viewer`](https://github.com/Saccarab/geo-data-viewer) to browse runs, overlaps, and per-domain breakdowns.
-
----
-
-## 8. Gemini path (separate from ChatGPT)
+## 7. Gemini path (separate from ChatGPT)
 
 - Responses via the **Vertex AI API** (Gemini 3.0 Flash) — grounding metadata is native (`webSearchQueries`, grounding chunks).
 - **`tools/VertexResolverExtension`** resolves Vertex redirect URLs to real destinations.
@@ -181,7 +175,6 @@ Load the matched + enriched data into [`geo-data-viewer`](https://github.com/Sac
 
 - **ChatGPT scraper:** confirm the "More" divider was found (else the cited/additional split is wrong — the scraper logs `divider found/NOT found`); confirm `content_references` is non-empty.
 - **Model routing:** check `resolved_model_slug` — the consumer tier sometimes routes ~⅓ of runs to a mini model (e.g. `gpt-5-3-mini`).
-- **Bing page-1 truncation:** if page 1 returned only 2–4 organic results, the deep (rank-200) pass is required — displaced results scatter deep, they don't move to page 2.
 - **SerpApi cap:** ~28 organic/query — don't expect deep Google.
 - **`search_result_groups`** is near-empty on GPT-5.5 — the raw retrieved pool / "unsurfaced" links are no longer exposed; everything moved to `content_references` items.
 
