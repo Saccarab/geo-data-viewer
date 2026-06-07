@@ -174,7 +174,6 @@ Both judges read the page body from `data/fetched_content/{hash}.txt` (hash of t
 - **ChatGPT scraper:** confirm the "More" divider was found (else the cited/additional split is wrong — the scraper logs `divider found/NOT found`); confirm `content_references` is non-empty.
 - **Model routing:** check `resolved_model_slug` — the consumer tier sometimes routes ~⅓ of runs to a mini model (e.g. `gpt-5-3-mini`).
 - **SerpApi cap:** ~28 organic/query including PAA & discussions
-- **`search_result_groups`** is near-empty on GPT-5.5 — the raw retrieved pool / "unsurfaced" links are no longer exposed; everything moved to `content_references` items.
 
 ---
 
