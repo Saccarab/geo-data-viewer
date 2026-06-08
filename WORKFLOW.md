@@ -202,8 +202,6 @@ Both judges read the page body from `data/fetched_content/{hash}.txt` (hash of t
 
 ## Output conventions
 
-> **TODO: confirm** — canonical folder structure and file-naming. Observed: per-version SerpApi dirs (`data/serpapi_v{2,3}_google_results/`), fetched content at `data/fetched_content/{sha256-16}.txt`, dated CSV exports (`chatgpt_results_<ISO>.csv`, `bing_results_<ISO>.csv`).
-
 | Treat as… | Files |
 |---|---|
 | **Raw evidence** | ChatGPT scraper CSVs, Bing scrape CSVs, SerpApi JSONs, `data/fetched_content/` |
