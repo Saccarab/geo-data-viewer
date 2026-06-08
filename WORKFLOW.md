@@ -98,7 +98,7 @@ From each run's `hidden_queries_json`. These — not the original prompt — are
 ["best free AI video translation tools 2026 dubbing subtitles"]
 ```
 
-Build the `run_id,query` CSV automatically with `scripts/build_bing_input.py` (this feeds steps 3–4):
+Build the Bing scraper's `run_id,query` CSV automatically with `scripts/build_bing_input.py`:
 ```bash
 python scripts/build_bing_input.py --chatgpt chatgpt_results_<ISO>.csv
 # -> chatgpt_results_<ISO>_bing_input.csv
@@ -140,6 +140,8 @@ P0001_r1, "best free AI video translation tools 2026", 1, 1, https://www.unite.a
 SERPAPI_API_KEY=... node scripts/collect_serpapi_results.mjs --v3
 ```
 `--v2`/`--v3` route to per-version output dirs so earlier waves aren't overwritten. ~28 organic results/query (≈2 pages) — Google is **not** scraped deep.
+
+**Input** — by default it reads the fan-out queries from the citation mappings (`datapass/citation_mappings/`). To scrape a specific set instead, pass `--input <csv>` with columns `chatgpt_run_id,account,type,query` (`account` is the ChatGPT tier — Google is scraped per tier; `type` is `main` or `hidden_query`).
 
 **Output** — one JSON per query in `data/serpapi_v3_google_results/`:
 ```json
