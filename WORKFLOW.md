@@ -2,6 +2,8 @@
 
 End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini responses, scrape the Bing/Google results behind them, match, and enrich. Each step lists its **input**, the **tool/command**, and the **output** with a real sample.
 
+> 🎥 **Video walkthrough:** [`docs/methodology-walkthrough.mp4`](docs/methodology-walkthrough.mp4) — the ChatGPT capture and Bing scrape steps, recorded end to end (with subtitles).
+
 > **Tip:** the easiest way to work with this is opening the entire repo in Claude Code (that's my setup) — it helps a lot with navigating the pipeline and the data.
 
 > **Where things live:** this repo (the data viewer) bundles the **browser extensions** (`tools/`), the **v1 study data** (`datapass/`, `data/`), and the viewer. The **Node/Python collection scripts** referenced below as `scripts/…` (SerpApi collector, citation-mapping, content fetcher) live in the main research repository — they are not in this repo.
