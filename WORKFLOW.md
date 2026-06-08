@@ -12,7 +12,7 @@ End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini respons
 
 | Thing | Value |
 |---|---|
-| **US proxy** | Windscribe **browser extension**, location **Atlanta – Peachtree**. Apply to the browser tools (ChatGPT scraper, Bing tools). Without it, ChatGPT injects non-US localized searches. |
+| **US proxy** | Windscribe **browser extension** ([Chrome Web Store](https://chromewebstore.google.com/detail/free-vpn-for-chrome-vpn-e/hnmpcagpplmpfojmgmnngilcnanddlhb?hl=en) — listed as "Free VPN for Chrome"), location **Atlanta – Peachtree**. Apply to the browser tools (ChatGPT scraper, Bing tools). Without it, ChatGPT injects non-US localized searches. |
 | **Accounts** | One ChatGPT **Business** (enterprise/edu tier), one **Plus** (consumer). Always run in **Temporary Chat**. |
 | **API keys** | `SERPAPI_API_KEY` (Google). `GEMINI_API_KEY` (for the DNA classifier / Gemini path). `OPEN_AI_KEY` (for the GPT-5-mini DNA labeler). |
 | **Extensions** | Load unpacked from `tools/` at `chrome://extensions` → Developer mode → Load unpacked. |
@@ -24,6 +24,10 @@ SerpApi (Google) sets US locale **in code** (`location: "United States"`), so it
 ## 1. Collect ChatGPT responses — `tools/ChatGPT Response Scraper`
 
 **This is the primary extractor.** No manual DevTools needed.
+
+> ⚙️ **Toggle on "Include Raw API Data"** in the extension before running. This captures the full streaming network response (`raw_api_response_json`), which is where the GPT-5.5 `result_source` / `ref_index` provider data lives. Files are ~90% larger, but the rich citation analysis depends on it. Leave it off only if you want faster, lighter downloads and don't need the raw payload.
+>
+> ![Include Raw API Data toggle in the ChatGPT Response Scraper](docs/images/chatgpt-scraper-raw-api-toggle.png)
 
 **Input** — `prompt_id,query` CSV (`tools/ChatGPT Response Scraper/input_template.csv`):
 ```
@@ -91,13 +95,28 @@ From each run's `hidden_queries_json`. These — not the original prompt — are
 ```json
 ["best free AI video translation tools 2026 dubbing subtitles"]
 ```
-Build a `run_id,query` CSV from these for steps 3–4.
+
+Build the `run_id,query` CSV automatically with `scripts/build_bing_input.py` (this feeds steps 3–4):
+```bash
+python scripts/build_bing_input.py --chatgpt chatgpt_results_<ISO>.csv
+# -> chatgpt_results_<ISO>_bing_input.csv
+```
+```
+run_id,query
+P0031_r1,free audio to text transcription services 2026 free tier Whisper TurboScribe Otter
+P0076_r1,best free AI video translator 2026 video translation dubbing HeyGen Captions Rask AI free plan
+```
+It pulls every fan-out query (one row each), skips runs that never searched, and **zero-pads `prompt_id` to `P0000` form** to match `normalize_and_match.py` (step 5) — otherwise the scrape won't line up with the citations at match time. For Gemini, use `extract_fanout_queries.mjs` instead (it reads `webSearchQueries` from the grounding metadata).
 
 ---
 
 ## 3. Scrape Bing — `tools/Bing Results Scraper`
 
-Via proxy. This single tool collects Bing organic results **and** page content, run to depth ~200 (Bing's pagination is unstable, so depth is required — displaced results scatter deep rather than moving to page 2). The content-extraction toggle controls how much page text is pulled (`0` = metadata only, safer/faster).
+Via proxy. This single tool collects Bing organic results **and**, optionally, page content, run to depth ~200 (Bing's pagination is unstable, so depth is required — displaced results scatter deep rather than moving to page 2).
+
+> ⚙️ **Leave "Extract full website content" OFF here.** For the Bing scrape you only need the ranked URLs (metadata), so keep this toggle off — it's much faster and keeps the scrape focused on rankings. Fetch the actual page text later, in the content/DNA enrichment step (step 6), where it's only pulled for the URLs that actually got cited rather than every result to rank 200.
+>
+> ![Extract full website content toggle, left off on the Bing scraper](docs/images/bing-scraper-content-toggle.png)
 
 **Input** — `run_id,query` CSV (the fan-out queries):
 ```
