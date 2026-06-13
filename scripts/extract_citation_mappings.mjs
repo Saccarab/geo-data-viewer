@@ -11,18 +11,78 @@ if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+/** Normalize a URL for matching: drop scheme/www, query string, trailing slash. */
+function normalizeUrl(u) {
+    if (!u) return '';
+    return u.replace(/https?:\/\/(www\.)?/, '').split('?')[0].replace(/\/$/, '').toLowerCase();
+}
+
+/**
+ * Flatten content_references into the per-citation items that carry url +
+ * refs + result_source. In GPT-5.5 these live inside `type: null` blocks under
+ * an `items[]` array; earlier waves also expose `items` directly on a ref.
+ */
+function collectContentRefItems(refs) {
+    const items = [];
+    const visit = (node) => {
+        if (Array.isArray(node)) { node.forEach(visit); return; }
+        if (!node || typeof node !== 'object') return;
+        if (node.url && (node.refs || node.result_source || node.attribution)) {
+            items.push(node);
+        }
+        if (Array.isArray(node.items)) node.items.forEach(visit);
+        if (Array.isArray(node.fallback_items)) node.fallback_items.forEach(visit);
+    };
+    visit(refs);
+    return items;
+}
+
+/**
+ * Build "turn_refType_refIndex" -> source map from content_references items.
+ * Carries result_source (the GPT-5.5 provider: bing | bright | serp | labrador).
+ */
+function buildRefIndexMapFromItems(items) {
+    const map = {};
+    for (const it of items) {
+        for (const r of (it.refs || [])) {
+            if (r == null || r.ref_index == null) continue;
+            const key = `${r.turn_index}_${r.ref_type}_${r.ref_index}`;
+            if (!map[key]) {
+                map[key] = {
+                    url: it.url,
+                    title: it.title,
+                    snippet: it.snippet,
+                    domain: it.attribution || it.domain,
+                    ref_type: r.ref_type,
+                    ref_index: r.ref_index,
+                    turn_index: r.turn_index,
+                    pub_date: it.pub_date,
+                    result_source: it.result_source || null,
+                };
+            }
+        }
+    }
+    return map;
+}
+
 /**
  * Parse content_references_json to extract citation mappings
- * 
- * Strategy: 
+ *
+ * Strategy:
  * 1. Find ALL [URL] tags in response_text and assign each a sequential index
  * 2. For each URL, extract the claim text (text between previous URL and this one)
  * 3. Match citation tokens to URLs based on position proximity
- * 4. Enrich with source metadata from search_result_groups
+ * 4. Enrich with source metadata from search_result_groups (GPT-5.2/5.3) and/or
+ *    content_references items (GPT-5.5, which carry result_source + ref_index)
+ *
+ * Wave handling: GPT-5.5 moved source metadata out of search_result_groups
+ * (now near-empty) and into content_references items. When no inline citation
+ * tokens are present (the 5.5 case), citations are built directly from the
+ * [URL] tokens in the response and enriched by URL from those items.
  */
 function parseContentReferences(contentRefsJson, responseText, searchResultGroups) {
     if (!contentRefsJson) return [];
-    
+
     let refs;
     try {
         refs = typeof contentRefsJson === 'string' ? JSON.parse(contentRefsJson) : contentRefsJson;
@@ -30,12 +90,28 @@ function parseContentReferences(contentRefsJson, responseText, searchResultGroup
         console.error('Failed to parse content_references_json:', e.message);
         return [];
     }
-    
+
     if (!Array.isArray(refs)) return [];
-    
-    // Build ref_index -> source mapping from search_result_groups
+
+    // Build ref_index -> source mapping. search_result_groups is authoritative on
+    // GPT-5.2/5.3; on 5.5 it's near-empty, so supplement from content_references items.
     const refIndexMap = buildRefIndexMap(searchResultGroups);
-    
+    const itemList = collectContentRefItems(refs);
+    const itemRefIndexMap = buildRefIndexMapFromItems(itemList);
+    for (const [k, v] of Object.entries(itemRefIndexMap)) {
+        if (!refIndexMap[k]) refIndexMap[k] = v;          // fill gaps, don't overwrite
+    }
+    // URL -> item (for result_source / ref_index enrichment by inline URL)
+    const urlToItem = {};
+    for (const it of itemList) {
+        const nu = normalizeUrl(it.url);
+        if (nu && !urlToItem[nu]) urlToItem[nu] = it;
+    }
+    const firstRefIndex = (it) => {
+        const idxs = (it.refs || []).filter(r => r && r.ref_index != null).map(r => r.ref_index);
+        return idxs.length ? Math.min(...idxs) : null;
+    };
+
     // Step 1: Find ALL [URL] positions in the response_text (ordered by position)
     const urlPositions = [];
     const urlRegex = /\[(https?:\/\/[^\]\s]+)\]/g;
@@ -49,7 +125,7 @@ function parseContentReferences(contentRefsJson, responseText, searchResultGroup
             index: urlPositions.length
         });
     }
-    
+
     // Step 2: Pre-compute claim text for each URL position
     for (let i = 0; i < urlPositions.length; i++) {
         const currentUrlPos = urlPositions[i];
@@ -57,7 +133,7 @@ function parseContentReferences(contentRefsJson, responseText, searchResultGroup
         if (i > 0) {
             blockStart = urlPositions[i - 1].end;
         }
-        
+
         let claimText = responseText.substring(blockStart, currentUrlPos.start);
         claimText = claimText
             .replace(/^\s*\]\s*/, '')
@@ -67,14 +143,51 @@ function parseContentReferences(contentRefsJson, responseText, searchResultGroup
             .replace(/\n+/g, ' ')
             .replace(/\s{2,}/g, ' ')
             .trim();
-        
+
         urlPositions[i].claimText = claimText;
     }
-    
+
+    // Detect inline citation tokens (citeturn0search3 style). Present on 5.2/5.3,
+    // absent on 5.5 — which selects the URL-driven path below.
+    const hasInlineTokens = refs.some(r =>
+        r && typeof r === 'object' && typeof r.start_idx === 'number' &&
+        /turn\d+[a-z]+\d+/.test(r.matched_text || ''));
+
+    // ---- GPT-5.5 path: build citations straight from the [URL] tokens ----
+    if (!hasInlineTokens && urlPositions.length > 0 && itemList.length > 0) {
+        const citations = [];
+        for (const pos of urlPositions) {
+            const it = urlToItem[normalizeUrl(pos.url)];
+            const source = it ? {
+                url: it.url,
+                title: it.title,
+                snippet: it.snippet,
+                domain: it.attribution || it.domain,
+                result_source: it.result_source || null,
+                ref_index: firstRefIndex(it),
+                ref_type: (it.refs && it.refs[0] && it.refs[0].ref_type) || 'search',
+            } : null;
+            citations.push({
+                token_position: { start_idx: pos.start, end_idx: pos.end },
+                citation_token: '',
+                type: 'inline_url',
+                sources: source ? [source] : [],
+                inline_url: pos.url,
+                url_position: pos.start,
+                claim_text: pos.claimText,
+                url_index: pos.index,
+                result_source: source ? source.result_source : null,
+                ref_index: source ? source.ref_index : null,
+            });
+        }
+        return citations;
+    }
+
+    // ---- GPT-5.2/5.3 path: token-driven (original logic) ----
     // Step 3: Process each citation token
     const citations = [];
     const usedUrlIndices = new Set(); // Track which URLs have been assigned
-    
+
     for (const ref of refs) {
         if (typeof ref !== 'object' || ref === null) continue;
         if (ref.type === 'sources_footnote') continue;
@@ -171,6 +284,14 @@ function parseContentReferences(contentRefsJson, responseText, searchResultGroup
                 citation.claim_text = bestUrl.claimText;
                 citation.url_index = bestUrlIdx;
                 usedUrlIndices.add(bestUrlIdx);
+
+                // If a content_references item exists for this URL, surface its
+                // provider (result_source) and rank (ref_index) on the citation.
+                const it = urlToItem[normalizeUrl(bestUrl.url)];
+                if (it) {
+                    citation.result_source = it.result_source || null;
+                    citation.ref_index = firstRefIndex(it);
+                }
             }
         }
         
@@ -190,8 +311,8 @@ function extractRefIndices(matchedText) {
     if (!matchedText) return [];
     
     const indices = [];
-    // Pattern: turn<N>search<M> or turn<N>news<M> or turn<N>academia<M>
-    const pattern = /turn(\d+)(search|news|academia)(\d+)/g;
+    // Pattern: turn<N><refType><M> — refType is search/news/academia/product/etc.
+    const pattern = /turn(\d+)([a-z]+)(\d+)/g;
     let match;
     
     while ((match = pattern.exec(matchedText)) !== null) {
@@ -608,4 +729,9 @@ async function main() {
     console.log(`   Avg citations per run: ${summary.aggregate_stats.avg_citations_per_run}`);
 }
 
-main().catch(console.error);
+// Run as a script (not when imported for tests)
+if (import.meta.url === `file://${process.argv[1].replace(/\\/g, '/')}` || process.argv[1]?.endsWith('extract_citation_mappings.mjs')) {
+    main().catch(console.error);
+}
+
+export { parseContentReferences, extractRefIndices, collectContentRefItems, buildRefIndexMapFromItems, normalizeUrl };

@@ -85,7 +85,7 @@ node scripts/extract_citation_mappings.mjs
 }
 ```
 
-> **Note:** this script resolves each citation's source via `search_result_groups`, which was fully populated in **GPT-5.2**. On **GPT-5.5** that field is near-empty (the data moved into `content_references` items with `result_source`/`ref_index`), so the script needs adapting to read sources from `content_references` for newer waves.
+> **Note (wave handling):** on **GPT-5.2/5.3** this script resolves each citation's source via `search_result_groups`. On **GPT-5.5** that field is near-empty — the data moved into `content_references` items carrying `result_source` (provider: bing / bright / serp / labrador) and `ref_index` (provider rank). The script handles both automatically: when no inline citation tokens are present (the 5.5 case) it builds the claim→URL mappings from the `[url]` tokens in the response and enriches each from the `content_references` items, so every mapping also gets `result_source` and `ref_index`.
 
 ---
 
