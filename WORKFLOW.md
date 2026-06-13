@@ -6,7 +6,7 @@ End-to-end pipeline for reproducing a study wave: collect ChatGPT/Gemini respons
 
 > **Tip:** the easiest way to work with this is opening the entire repo in Claude Code (that's my setup) — it helps a lot with navigating the pipeline and the data.
 
-> **Where things live:** this repo (the data viewer) bundles the **browser extensions** (`tools/`), the **v1 study data** (`datapass/`, `data/`), and the viewer. The **Node/Python collection scripts** referenced below as `scripts/…` (SerpApi collector, citation-mapping, content fetcher) live in the main research repository — they are not in this repo.
+> **Where things live:** this repo (the data viewer) bundles the **browser extensions** (`tools/`), the **v1 study data** (`datapass/`, `data/`), the viewer, and the **Node/Python collection + enrichment scripts** under `scripts/` (SerpApi collector, citation-mapping, fan-out extractor, content fetcher, DNA labelers). They expect to run from a repo root with the `data/` and `datapass/` layout shown below, and all API keys are read from environment variables (`SERPAPI_API_KEY`, `GEMINI_API_KEY`, `OPEN_AI_KEY`).
 
 ---
 
@@ -176,7 +176,7 @@ For structural-feature analysis of cited (and additional) URLs.
 2. **URL Content Fetcher extension** (`tools/URL Content Fetcher`) — for the ~13% the Node fetcher 403s on. Input: CSV with a `url` column → outputs `content`, `page_title`, `meta_description`, etc.
 3. **Classify** — LLM labeler with `prompts/page_label_dna_only_v1.txt` (GPT-5-mini / Gemini-Flash) → page type + structural features → append to `data/enrichment/full_url_dna_database.csv`.
 
-**Labeling scripts** (main research repo):
+**Labeling scripts:**
 - `scripts/llm/enrich_control_gpt_full_content.mjs` — GPT-5-mini labeler over fetched content → `datapass/page_labels_control_gpt5_mini.jsonl`
 - `scripts/llm/enrich_gemini_grounding.mjs` — Gemini 2.5 Flash labeler (same prompt) → `datapass/page_labels_gemini.jsonl`
 
