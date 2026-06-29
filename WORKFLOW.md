@@ -168,6 +168,49 @@ python scripts/normalize_and_match.py     --chatgpt chatgpt_results_business.csv
 
 ---
 
+## 5b. Database schema — `geo_fresh.db`
+
+`normalize_and_match.py` (above) is a standalone CSV tool — it doesn't need a database. The **viewer** (`data_viewer.py`) reads a SQLite DB instead: `geo_fresh.db` (shipped in this repo). It holds the same data in five tables, with `url_normalized` precomputed on every URL using the exact rule from step 5, so overlap is just a join on `(run_id, url_normalized)`.
+
+```sql
+prompts        (prompt_id, prompt, category)
+
+runs           (run_id, prompt_id, run_number, query, generated_search_query,
+                web_search_triggered, web_search_forced, items_count,
+                items_with_citations_count, hidden_queries, items_json,
+                response_text, search_result_groups_json, sources_cited_json,
+                sources_additional_json, sources_all_json,
+                sonic_classification_json, hidden_queries_json, account_type)
+
+citations      (id, run_id, prompt_id, run_number, citation_type, position,
+                url, url_normalized, title, domain, account_type)
+               -- citation_type: 'cited' | 'additional' | 'rejected'
+               -- account_type:  'enterprise' (Business) | 'personal' (Plus)
+
+bing_results   (id, run_id, query, position, page_num, title, url,
+                url_normalized, domain, snippet, account_type)
+
+google_results (id, run_id, chatgpt_run_id, prompt_id, account_type, query,
+                query_type, page_num, position, global_position, url, domain,
+                title, snippet, result_type, collected_at, url_normalized)
+```
+
+Rows: one `runs` row per ChatGPT run; its `sources_cited_json` / `sources_additional_json` blobs explode into `citations` (`cited` / `additional`); Bing and Google scrapes load one row per result into `bing_results` / `google_results`. The overlap is then SQL:
+
+```sql
+-- a cited URL "overlaps" Bing if it appears in that run's Bing results
+SELECT 1 FROM bing_results b
+WHERE b.run_id = c.run_id AND b.url_normalized = c.url_normalized
+  AND b.position <= 200;
+-- "invisible" = a cited URL in NEITHER bing_results NOR google_results
+```
+
+To load your own data, point it into these tables (one normalized-URL column per table) and the viewer + joins work unchanged.
+
+> Note: this SQLite schema is the **ChatGPT** pipeline. The Gemini viewer uses a separate store — a precomputed JSON bundle (`prompts`, `runs`, `resolvedUrls`, `enrichedData`, `rankDistribution`), not relational tables.
+
+---
+
 ## 6. Content / DNA enrichment
 
 For structural-feature analysis of cited (and additional) URLs.
